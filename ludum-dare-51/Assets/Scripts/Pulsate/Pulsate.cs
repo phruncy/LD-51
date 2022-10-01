@@ -41,7 +41,6 @@ namespace LD51
                 _currentTime = _currentTime + Time.deltaTime;
                 float scaleValue = _curve.Evaluate(_currentTime / _duration);
                 float factor = 1 + (scaleValue - 1) * _intensity;
-                Debug.Log($"Object {name} | scaleValue {scaleValue} | factor {factor}");
                 _target.localScale = _startScale * factor;
                 yield return 0;
             }

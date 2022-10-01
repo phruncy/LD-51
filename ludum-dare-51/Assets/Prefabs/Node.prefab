@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5446084251163700089}
   - component: {fileID: 5446084251163700088}
   - component: {fileID: 2035984176766040841}
+  - component: {fileID: 3784584288560696765}
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 5446084251163700089}
+  _seedSlots: []
 --- !u!114 &2035984176766040841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +140,16 @@ MonoBehaviour:
     m_RotationOrder: 4
   _maxSize: 5
   _growthPerSecond: 0.15
+--- !u!114 &3784584288560696765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5446084251163700095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65de88ce8f60e2145b91bc8d2fa954ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _node: {fileID: 5446084251163700088}

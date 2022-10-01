@@ -171,6 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1274978865222024123}
   - component: {fileID: 1274978865222024122}
+  - component: {fileID: 236428524900260452}
   m_Layer: 0
   m_Name: NodeConnection
   m_TagString: Untagged
@@ -208,5 +209,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lineRenderer: {fileID: 1274978864099415449}
   verticesAmount: 20
-  _startNode: {fileID: 0}
-  _endNode: {fileID: 0}
+--- !u!114 &236428524900260452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274978865222024101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9903256dc203d4a8a8a5e4b72ad0ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _connection: {fileID: 1274978865222024122}
