@@ -58,3 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#
+#
+# FMOD related files
+
+/[Aa]ssets/Plugins/FMOD
+/[Aa]ssets/Plugins/FMOD.meta
+
