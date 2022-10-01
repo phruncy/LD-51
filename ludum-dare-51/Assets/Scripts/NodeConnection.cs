@@ -8,8 +8,10 @@ namespace LD51
 {
     public class NodeConnection : MonoBehaviour
     {
-		private float RADIUS_FACTOR = 0.8f;
-		private float MAX_WIDTH_FACTOR = 1f;
+		private float RADIUS_FACTOR = 0.65f;
+		private float MAX_WIDTH_FACTOR = 1.5f;
+		private float MIN_WIDTH_FACTOR = 0.7f;
+		private int MIDDLE_KEY_INDEX = 1;
 
         [SerializeField]
         private LineRenderer _lineRenderer;
@@ -23,6 +25,7 @@ namespace LD51
 
 		private void Start()
 		{
+			_lineRenderer.positionCount = verticesAmount;
 			_lineRenderer.useWorldSpace = false;
 		}
 
@@ -63,6 +66,17 @@ namespace LD51
 			float endWidth = _endNode.Radius * MAX_WIDTH_FACTOR;
 			_lineRenderer.startWidth = startWidth;
 			_lineRenderer.endWidth = endWidth;
+			UpdateCenterKey(startWidth, endWidth);
+			
+		}
+
+		private void UpdateCenterKey(float startWidth, float endWidth)
+		{
+			float combinedWidth = startWidth + endWidth;
+			Keyframe[] keys = _lineRenderer.widthCurve.keys;
+			keys[MIDDLE_KEY_INDEX].value = Mathf.Min(startWidth, endWidth) * MIN_WIDTH_FACTOR;
+			keys[MIDDLE_KEY_INDEX].time = startWidth / combinedWidth;
+			_lineRenderer.widthCurve = new AnimationCurve(keys);
 		}
 	}
 }

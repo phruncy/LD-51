@@ -95,24 +95,24 @@ LineRenderer:
         time: 0
         value: 0.54506683
         inSlope: -17.893167
-        outSlope: -1.0160303
+        outSlope: -0.87553394
         tangentMode: 69
         weightedMode: 3
         inWeight: 0.33333334
         outWeight: 0.009569262
       - serializedVersion: 3
-        time: 0.46042904
-        value: 0.07725694
-        inSlope: -0.01748258
-        outSlope: -0.01748258
+        time: 0.5
+        value: 0.10729986
+        inSlope: 0.000010818824
+        outSlope: 0.000010818824
         tangentMode: 0
         weightedMode: 3
-        inWeight: 1
-        outWeight: 1
+        inWeight: 0.72905433
+        outWeight: 0.7499965
       - serializedVersion: 3
         time: 1
         value: 0.472103
-        inSlope: 0.73177785
+        inSlope: 0.7296063
         outSlope: Infinity
         tangentMode: 69
         weightedMode: 3
@@ -192,7 +192,7 @@ Transform:
   m_Children:
   - {fileID: 1274978864099415454}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1274978865222024122
 MonoBehaviour:
@@ -207,6 +207,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lineRenderer: {fileID: 1274978864099415449}
-  verticesAmount: 10
+  verticesAmount: 20
   _startNode: {fileID: 0}
   _endNode: {fileID: 0}
