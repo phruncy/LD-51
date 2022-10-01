@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5446084251163700090}
   - component: {fileID: 5446084251163700089}
   - component: {fileID: 5446084251163700088}
-  - component: {fileID: 865386885723059344}
+  - component: {fileID: 2035984176766040841}
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5446084251163700089
 SpriteRenderer:
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 5446084251163700089}
---- !u!114 &865386885723059344
+--- !u!114 &2035984176766040841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,8 +108,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 5446084251163700095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ebd5701da997494099667b3283a9b61, type: 3}
+  m_Script: {fileID: 11500000, guid: fbb38a185bafd6940ab14527efd4e2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 5446084251163700090}
-  _growthPerTimerFinished: 0.5
+  _growthFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.315913
+      outSlope: -1.315913
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.03388214
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _maxSize: 5
+  _growthPerSecond: 0.15

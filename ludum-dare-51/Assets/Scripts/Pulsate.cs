@@ -11,10 +11,9 @@ namespace LD51
         [SerializeField]
         private Transform _target;
         [SerializeField]
-        private float _interterval = 1;
+        private float _duration = 1;
 
         private float _currentTime = 0;
-        private float _delay = 0;
         private Vector3 _startScale;
         private float _intensity = 1;
 
@@ -23,21 +22,29 @@ namespace LD51
             _startScale = _target.localScale;
         }
 
-		private void Update()
+        public void StartPulse(float delay)
 		{
-            _currentTime = (_currentTime + Time.deltaTime) % _interterval;
-            float scaleValue = _curve.Evaluate((_currentTime - _delay) / _interterval % 1);
-            _target.localScale = _startScale * (1 + (1 - scaleValue) * _intensity);
-        }
-
-        public void SetDelay(float value)
-		{
-            _delay = value;
-        }
+            StartCoroutine(DoPulsate(delay));
+		}
 
         public void SetIntensity(float value)
 		{
             _intensity = value;
+        }
+
+        private IEnumerator DoPulsate(float delay)
+		{
+            _currentTime = 0;
+            yield return new WaitForSeconds(delay);
+            while(_currentTime < _duration)
+			{
+                _currentTime = _currentTime + Time.deltaTime;
+                float scaleValue = _curve.Evaluate(_currentTime / _duration);
+                float factor = 1 + (scaleValue - 1) * _intensity;
+                Debug.Log($"Object {name} | scaleValue {scaleValue} | factor {factor}");
+                _target.localScale = _startScale * factor;
+                yield return 0;
+            }
         }
 	}
 }

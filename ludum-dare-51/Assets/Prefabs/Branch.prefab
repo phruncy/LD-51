@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7164435655146921121}
   - component: {fileID: 984770363581395083}
   - component: {fileID: 7638197196892465810}
+  - component: {fileID: 7352014264778658769}
   m_Layer: 0
   m_Name: Branch
   m_TagString: Untagged
@@ -73,6 +74,7 @@ MonoBehaviour:
   _maxDistance: 15
   _delayPerUnit: 0.02
   _targetPulsate: {fileID: 7638197196892465810}
+  _targetPulsateOnTimer: {fileID: 7352014264778658769}
 --- !u!114 &7638197196892465810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,16 +100,16 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.76744187
     - serializedVersion: 3
-      time: 0.25
-      value: 1.1
-      inSlope: 0.0075437156
-      outSlope: -0.0069844234
+      time: 0.15
+      value: 1.2
+      inSlope: 0.013116689
+      outSlope: 0.019389406
       tangentMode: 1
       weightedMode: 3
-      inWeight: 0.7162272
-      outWeight: 0.2410436
+      inWeight: 0.735954
+      outWeight: 0.24637717
     - serializedVersion: 3
-      time: 0.8
+      time: 1.0168527
       value: 1
       inSlope: -0.000003334464
       outSlope: -0.000003334464
@@ -119,7 +121,20 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _target: {fileID: 7164435655146921121}
-  _interterval: 1
+  _duration: 1
+--- !u!114 &7352014264778658769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6112218493908525246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78287249764730944b0d304e08eaa828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pulsate: {fileID: 7638197196892465810}
 --- !u!1001 &3322372102391956442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128,6 +143,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 7164435655146921121}
     m_Modifications:
+    - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: _maxSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: _growthPerSecond
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5446084251163700090, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: m_RootOrder
       value: 0

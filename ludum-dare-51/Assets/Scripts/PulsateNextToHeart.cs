@@ -14,6 +14,8 @@ namespace LD51
 		private float _delayPerUnit = 0.02f;
 		[SerializeField]
 		private Pulsate _targetPulsate;
+		[SerializeField]
+		private PulsateOnTimer _targetPulsateOnTimer;
 		private Heart _heart;
 
 		private void Start()
@@ -24,7 +26,7 @@ namespace LD51
 		private void Update()
 		{
 			float distanceToHeart = (_targetPulsate.transform.position - _heart.transform.position).magnitude;
-			_targetPulsate.SetDelay(distanceToHeart * _delayPerUnit);
+			_targetPulsateOnTimer.SetDelay(distanceToHeart * _delayPerUnit);
 			float intensity = 1 - Mathf.Clamp01((_maxDistance - distanceToHeart) / _maxDistance);
 			_targetPulsate.SetIntensity(_distanceCurve.Evaluate(intensity));
 		}
