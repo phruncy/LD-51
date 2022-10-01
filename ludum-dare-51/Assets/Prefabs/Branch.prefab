@@ -71,7 +71,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _maxDistance: 15
+  _maxDistance: 20
   _delayPerUnit: 0.02
   _targetPulsate: {fileID: 7638197196892465810}
   _targetPulsateOnTimer: {fileID: 7352014264778658769}
@@ -121,7 +121,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _target: {fileID: 7164435655146921121}
-  _duration: 1
+  _duration: 0.5
 --- !u!114 &7352014264778658769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: _growthPerSecond
-      value: 0.05
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5446084251163700090, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: m_RootOrder

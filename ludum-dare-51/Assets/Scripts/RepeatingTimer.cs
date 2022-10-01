@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace LD51
@@ -12,6 +10,8 @@ namespace LD51
 
 		public event Action OnFinished;
 		public float CurrentTime { get; private set; } = 0;
+		public float SecondsTillFrigger => _secondsTillTrigger;
+		public float Percentage => CurrentTime / SecondsTillFrigger;
 
 		private void Update()
 		{
