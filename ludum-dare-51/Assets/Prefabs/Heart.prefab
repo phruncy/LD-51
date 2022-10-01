@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1022051275680983769}
   - component: {fileID: 1978271571748842632}
+  - component: {fileID: 2935395673571895065}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -80,6 +81,20 @@ MonoBehaviour:
     m_RotationOrder: 4
   _target: {fileID: 1022051275680983769}
   _interterval: 1
+  _factor: 1
+--- !u!114 &2935395673571895065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412621096657425222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925a9bc99b6a24b47bcd42bad572932e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pulsate: {fileID: 1978271571748842632}
 --- !u!1001 &5902825707681898278
 PrefabInstance:
   m_ObjectHideFlags: 0
