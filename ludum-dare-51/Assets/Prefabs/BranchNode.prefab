@@ -26,7 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: _maxSize
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: _growthPerSecond
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: _growthFactor.m_Curve.Array.data[1].value

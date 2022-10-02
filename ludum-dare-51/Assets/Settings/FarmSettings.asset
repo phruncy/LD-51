@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb53550684ba7cb4d99db031fb053e6a, type: 3}
-  m_Name: SeedSettings
+  m_Script: {fileID: 11500000, guid: ba2121f397bf27e4580ced517639f4cf, type: 3}
+  m_Name: FarmSettings
   m_EditorClassIdentifier: 
-  _growCosts: 5
-  _priority: 1
-  _distanceFromNode: 2
-  _angleVariance: 20
-  _slotOnSize: 0.3
-  _minNodeSize: 0.4
+  _baseEnergyGerneration: 1

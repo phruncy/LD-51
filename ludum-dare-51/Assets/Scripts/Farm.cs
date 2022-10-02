@@ -9,5 +9,17 @@ namespace LD51
         [SerializeField]
         private Node _node;
         public Node Node => _node;
-    }
+
+        [SerializeField]
+        private EnergyProducer _producer;
+        public EnergyProducer Producer => _producer;
+
+        [SerializeField]
+        private FarmSettings _settings;
+
+		private void Start()
+		{
+            _producer.EnergyProduction = _settings.BaseEnergyGerneration;
+        }
+	}
 }
