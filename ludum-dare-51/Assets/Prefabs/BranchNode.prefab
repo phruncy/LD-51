@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: _growthFactor.m_Curve.Array.data[1].value
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5446084251163700088, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: _seedSlots.Array.size
       value: 3
@@ -26,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 8543811774938076055}
     - target: {fileID: 5446084251163700090, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5446084251163700090, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: m_LocalPosition.x
@@ -121,6 +125,7 @@ MonoBehaviour:
   - {fileID: 8571527454913909808}
   - {fileID: 6547139836563796354}
   - {fileID: 8543811774938076055}
+  _node: {fileID: 108350174545314411}
 --- !u!114 &3641675434116167595
 MonoBehaviour:
   m_ObjectHideFlags: 0

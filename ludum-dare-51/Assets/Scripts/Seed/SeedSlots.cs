@@ -9,5 +9,9 @@ namespace LD51
         [SerializeField]
         private SeedSlot[] _values = new SeedSlot[0];
         public SeedSlot[] Values => _values;
+
+        [SerializeField]
+        private Node _node;
+        public Node Node => _node;
     }
 }

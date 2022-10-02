@@ -213,7 +213,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.96691215, b: 0.23270434, a: 1}
   m_FlipX: 0
@@ -373,13 +373,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4278392345713844075, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4278392345713844077, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
       propertyPath: m_Name
       value: HeartNode
       objectReference: {fileID: 0}
     - target: {fileID: 7821278367076093723, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
       propertyPath: _growthPerSecond
-      value: 0.025
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 8125893917214678069, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
       propertyPath: _node

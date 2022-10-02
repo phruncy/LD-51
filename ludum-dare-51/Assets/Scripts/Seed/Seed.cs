@@ -13,8 +13,8 @@ namespace LD51
         [SerializeField]
         private Node _node;
         [SerializeField]
-        private MoveToTarget _moveToTarget;
-        public MoveToTarget MoveToTarget => _moveToTarget;
+        private SeedToTargetMover _moveToTarget;
+        public SeedToTargetMover MoveToTarget => _moveToTarget;
         public Node Node => _node;
 
 		private void Start()

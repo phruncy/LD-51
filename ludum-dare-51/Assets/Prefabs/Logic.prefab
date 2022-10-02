@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2582768387388625357}
   - component: {fileID: 2582768387388625356}
   - component: {fileID: 8787454537546638546}
+  - component: {fileID: 4273887581670469426}
   m_Layer: 0
   m_Name: Seeds
   m_TagString: Untagged
@@ -59,10 +60,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startDelay: 2
   _seedPrefab: {fileID: 5817231525477474092, guid: 2f0fef2c1d009e946955e9e0dd4a1931, type: 3}
+  _seedHookPrefab: {fileID: 5856871747960009226, guid: 8f945c4e2dcdda24582dadf0af332e20, type: 3}
   _connectionPrefab: {fileID: 1274978865222024122, guid: 279dabd1d44c74148ab6449545da0338, type: 3}
   _connectionsHook: {fileID: 0}
   _nodesHook: {fileID: 0}
   _settings: {fileID: 11400000, guid: 2f6f4cf9114abe649805f8cdce528908, type: 2}
+--- !u!114 &4273887581670469426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2582768387388625359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee28db3ad56343a4a989b8e177491f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settings: {fileID: 11400000, guid: 2f6f4cf9114abe649805f8cdce528908, type: 2}
+  _seedsController: {fileID: 2582768387388625356}
 --- !u!1 &2582768387559537411
 GameObject:
   m_ObjectHideFlags: 0

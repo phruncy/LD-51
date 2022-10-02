@@ -8,9 +8,11 @@ namespace LD51
     public class SeedPlacer : MonoBehaviour
     {
         [SerializeField]
-        private float _startDelay = 2;
+        private float _startDelay = 1;
         [SerializeField]
         private Seed _seedPrefab;
+        [SerializeField]
+        private SeedHook _seedHookPrefab;
         [SerializeField]
         private NodeConnection _connectionPrefab;
         [SerializeField]
@@ -20,33 +22,84 @@ namespace LD51
         [SerializeField]
         private SeedSettings _settings;
 
-        private SeedsController _slots;
-        private RepeatingTimer _timer;
+        private SeedsController _seedsController;
         private System.Random _random;
 
         private IEnumerator Start()
         {
-            _slots = FindObjectOfType<SeedsController>();
-            _timer = FindObjectOfType<RepeatingTimer>();
+            _seedsController = FindObjectOfType<SeedsController>();
             _random = new System.Random();
             yield return new WaitForSeconds(_startDelay);
-            PlaceSeed();
+            Init();
         }
 
-		private void PlaceSeed()
+		private void OnDestroy()
 		{
-            SeedSlot slot = _slots.GetRandomSeedSlot();
+            _seedsController.OnSeedSlotsAdded -= Init;
+			foreach (SeedSlot slot in _seedsController.SingleSlots)
+			{
+                slot.OnSlotActivated -= PlaceSeed;
+
+            }
+        }
+
+		private void Init()
+		{
+			foreach(SeedSlots slots in _seedsController.Slots)
+			{
+                Init(slots);
+            }
+            _seedsController.OnSeedSlotsAdded += Init;
+        }
+
+		private void Init(SeedSlots slots)
+		{
+			foreach (SeedSlot slot in slots.Values)
+			{
+                Init(slot);
+            }
+		}
+
+		private void Init(SeedSlot slot)
+		{
+            if (slot.Active)
+                PlaceSeed(slot);
+            else
+                slot.OnSlotActivated += PlaceSeed;
+        }
+
+		private void PlaceSeed(SeedSlot slot)
+		{
             if (slot == null)
                 return;
-            Seed seed = Instantiate(_seedPrefab, _nodesHook, true);
-            seed.transform.position = slot.transform.position; 
-            float angle = (float)_random.NextDouble() * _settings.AngleVariance - _settings.AngleVariance / 2;
-            Vector3 up = slot.transform.up;
-            seed.MoveToTarget.Target = slot.transform.position + up * _settings.DistanceFromSlot;
-            NodeConnection connection = Instantiate(_connectionPrefab, _connectionsHook, false);
-            Debug.Log(seed.MoveToTarget.Target - seed.transform.position);
-            connection.Init(slot.Node, seed.Node);
+            SeedHook hook = Instantiate(_seedHookPrefab, _nodesHook, true);
+            hook.Attatch.Init(slot.transform);
+            Seed seed = Instantiate(_seedPrefab, hook.transform, false);
+            SetPosition(seed, slot);
+            SetMoveToTarget(seed, slot);
+            CreateConnection(seed, slot);
             slot.AddSeed(seed);
+            slot.OnSlotActivated -= PlaceSeed;
+            Debug.Log("Seed placed");
         }
-	}
+
+		private void SetPosition(Seed seed, SeedSlot slot)
+		{
+            Vector3 pos = slot.transform.position;
+            seed.transform.position = pos;
+        }
+
+        private void SetMoveToTarget(Seed seed, SeedSlot slot)
+        {
+            float angle = (float)_random.NextDouble() * _settings.AngleVariance - _settings.AngleVariance / 2;
+            Vector3 pos = Quaternion.Euler(0, 0, angle) * (Vector2.up * _settings.DistanceFromNode);
+            seed.MoveToTarget.Init(Vector3.zero, pos);
+        }
+
+        private void CreateConnection(Seed seed, SeedSlot slot)
+        {
+            NodeConnection connection = Instantiate(_connectionPrefab, _connectionsHook, false);
+            connection.Init(slot.Node, seed.Node);
+        }
+    }
 }

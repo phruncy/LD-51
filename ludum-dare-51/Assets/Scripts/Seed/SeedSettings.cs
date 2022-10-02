@@ -16,11 +16,15 @@ namespace LD51
         public int Priority => _priority;
 
         [SerializeField]
-        private float _distanceFromSlot = 4f;
-        public float DistanceFromSlot => _distanceFromSlot;
+        private float _distanceFromNode = 7f;
+        public float DistanceFromNode => _distanceFromNode;
 
         [SerializeField]
         private float _angleVariance = 40;
         public float AngleVariance => _angleVariance;
+
+        [SerializeField]
+        private float _slotOnSize = 0.5f;
+        public float SlotOnSize => _slotOnSize;
     }
 }
