@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace LD51
 {
-    public class Heart : MonoBehaviour
+    public class SeedHook : MonoBehaviour
     {
         [SerializeField]
-        private Pulsate _pulsate;
-
-        public Pulsate Pulsate => _pulsate;
+        private Attatch _attatch;
+        public Attatch Attatch => _attatch;
     }
 }

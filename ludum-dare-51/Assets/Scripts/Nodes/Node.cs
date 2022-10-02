@@ -10,5 +10,6 @@ namespace LD51
         private SpriteRenderer _sprite;
 
         public float Radius => _sprite.bounds.size.x / 2;
+        public Color Color => _sprite.color;
     }
 }

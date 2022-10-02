@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -17,10 +14,9 @@ namespace LD51
         private LineRenderer _lineRenderer;
 		[SerializeField]
 		private int verticesAmount = 10;
-        [SerializeField]
-        private Node _startNode;
-        [SerializeField]
-        private Node _endNode;
+
+		public Node StartNode { get; private set; }
+		public Node EndNode { get; private set; }
 
 
 		private void Start()
@@ -32,15 +28,22 @@ namespace LD51
 		private void Update()
 		{
             UpdatePosition();
+			UpdateColors();
+		}
+
+		public void Init(Node startNode, Node endNode)
+		{
+			StartNode = startNode;
+			EndNode = endNode;
 		}
 
 		private void UpdatePosition()
 		{
-			Vector3 startNodePos = _startNode.transform.position;
-			Vector3 endNodePose = _endNode.transform.position;
+			Vector3 startNodePos = StartNode.transform.position;
+			Vector3 endNodePose = EndNode.transform.position;
 			Vector3 connectionVector = endNodePose - startNodePos;
-			float startNodeRadius = _startNode.Radius * RADIUS_FACTOR;
-			float endNodeRadius = _endNode.Radius * RADIUS_FACTOR;
+			float startNodeRadius = StartNode.Radius * RADIUS_FACTOR;
+			float endNodeRadius = EndNode.Radius * RADIUS_FACTOR;
 			Vector3 startPos = startNodePos + connectionVector.normalized * startNodeRadius;
 			float lineLength = connectionVector.magnitude - startNodeRadius - endNodeRadius;
 			transform.position = startPos;
@@ -62,8 +65,8 @@ namespace LD51
 
 		private void UpdateWidth()
 		{
-			float startWidth = _startNode.Radius * MAX_WIDTH_FACTOR;
-			float endWidth = _endNode.Radius * MAX_WIDTH_FACTOR;
+			float startWidth = StartNode.Radius * MAX_WIDTH_FACTOR;
+			float endWidth = EndNode.Radius * MAX_WIDTH_FACTOR;
 			_lineRenderer.startWidth = startWidth;
 			_lineRenderer.endWidth = endWidth;
 			UpdateCenterKey(startWidth, endWidth);
@@ -77,6 +80,26 @@ namespace LD51
 			keys[MIDDLE_KEY_INDEX].value = Mathf.Min(startWidth, endWidth) * MIN_WIDTH_FACTOR;
 			keys[MIDDLE_KEY_INDEX].time = startWidth / combinedWidth;
 			_lineRenderer.widthCurve = new AnimationCurve(keys);
+		}
+
+		private void UpdateColors()
+		{
+			Color startColor = StartNode.Color;
+			Color endColor = EndNode.Color;
+			Gradient gradient = new Gradient();
+			gradient.SetKeys(
+				new GradientColorKey[]
+				{
+					new GradientColorKey{color = startColor, time = 0.25f},
+					new GradientColorKey{color = endColor, time = 0.75f},
+				},
+				new GradientAlphaKey[]
+				{
+					new GradientAlphaKey(1, 0.25f),
+					new GradientAlphaKey(1, 0.75f)
+				}
+			);
+			_lineRenderer.colorGradient = gradient;
 		}
 	}
 }
