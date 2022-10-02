@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="DAWProject" id="{a61e2361-8e67-4954-90e6-5d90e4bb4aee}">
+		<property name="assetPath">
+			<value>LDJam51.rpp.link/</value>
+		</property>
+		<property name="dawProjectPath">
+			<value>C:/_Dateien/1_Meine_Dateien/1_Projekte/Privat/_Eigenes/Ludum Dare 1022/Audio/Reaper-Project/LDJam51.rpp</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7b2e457d-da40-45f1-86dc-ee77c7a59bed}</destination>
+		</relationship>
+	</object>
+</objects>

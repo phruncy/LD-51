@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{c6cf9212-282d-42ee-928c-221f807976fd}">
+		<property name="name">
+			<value>first-beat</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8022b7e0-c0e9-43d6-988a-2e13f21856e6}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{3861f0e1-02a4-426c-8466-b1618d530cd3}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{3861f0e1-02a4-426c-8466-b1618d530cd3}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

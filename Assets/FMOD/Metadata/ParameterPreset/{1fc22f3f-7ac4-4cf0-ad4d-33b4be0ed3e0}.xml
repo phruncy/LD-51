@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{1fc22f3f-7ac4-4cf0-ad4d-33b4be0ed3e0}">
+		<property name="name">
+			<value>tensectimer</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8022b7e0-c0e9-43d6-988a-2e13f21856e6}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f3b14362-66de-4463-903a-23d4db2a7a3c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f3b14362-66de-4463-903a-23d4db2a7a3c}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{83dde7c9-67e1-4576-994b-ffe06fa72c0d}">
+		<property name="name">
+			<value>depth-start</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8022b7e0-c0e9-43d6-988a-2e13f21856e6}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{7137be9f-de8b-45fe-8804-65a76b27640c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{7137be9f-de8b-45fe-8804-65a76b27640c}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.19999998807907104</value>
+		</property>
+	</object>
+</objects>

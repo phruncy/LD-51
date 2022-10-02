@@ -32,7 +32,7 @@ namespace LD51
             {
                 Vector3 offset = new Vector3(Random.Range(-spawnRadius, spawnRadius), Random.Range(-spawnRadius, spawnRadius), 1);
                 Vector3 position = transform.position + offset;
-                targetCollection.add(position);
+                targetCollection.Add(position);
             }
         }
     }
