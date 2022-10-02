@@ -91,7 +91,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3714612293945529552, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: m_Mass
-      value: 5
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714612293945529552, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714612293945529552, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5877600808147731334, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: m_Color.b
@@ -110,8 +118,12 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7612477275107655026, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
+      propertyPath: maxSpeed
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612477275107655026, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: maxSteeringForce
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7838770983948620131, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: m_Name

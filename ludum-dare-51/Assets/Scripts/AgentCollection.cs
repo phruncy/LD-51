@@ -14,7 +14,6 @@ namespace LD51
         {
             Agent agent = GameObject.Instantiate(prefab, position, Quaternion.identity);
             agent.transform.SetParent(transform);
-            agent.SeekTarget();
         }
 
         public void Remove(Agent agent)

@@ -19,27 +19,51 @@ namespace LD51
             get => _target;
         }
         private Vector2 acceleration;
-        [SerializeField]
-        private float brakingDistance = 4.0f;
         private float SqrMaxSpeed => maxSpeed * maxSpeed;
+        private AgentState _state = AgentState.TargetSeeking;
+        private uint _innerTimer = 0;
 
         public float delta => maxSpeed * 0.01f;
 
         private void FixedUpdate()
         {
-            MoveToTarget();
+            HandleState();
+        }
+
+        private void HandleState()
+        {
+            if (_state == AgentState.TargetLocked)
+            {
+                HandleTargetLocked();
+            }
+            else if (_state == AgentState.TargetSeeking)
+            {
+                HandleTargetSeeking();
+            }
+        }
+
+        private void HandleTargetSeeking()
+        {
+            SeekTarget();
+            if (_target)
+                _state = AgentState.TargetLocked;
+        }
+
+        private void HandleTargetLocked()
+        {
+            if (_target)
+                MoveToTarget();
+            else
+                _state = AgentState.TargetSeeking;
         }
 
         private void MoveToTarget()
         {
-            if (_target)
-            {
-                Vector2 desired = _target.transform.position - transform.position;
-                Vector2 steer = GetSteer(desired);
-                acceleration += steer;
-                Move();
-                Face(body.velocity);
-            }
+            Vector2 desired = _target.transform.position - transform.position;
+            Vector2 steer = GetSteer(desired);
+            acceleration += steer;
+            Move();
+            Face(body.velocity);
         }
 
         /// <summary>
@@ -67,21 +91,11 @@ namespace LD51
             body.MoveRotation(targetRotation);
         }
 
-        private Vector2 GetSteer(Vector2 target)
+        private Vector2 GetSteer(Vector2 targetDir)
         {
-            float distance = target.magnitude;
-            if (distance < brakingDistance)
-            {
-                target.Normalize();
-                float magnitude = (distance / brakingDistance) * maxSpeed;
-                target *= magnitude;
-            }
-            else
-            {
-                target *= maxSpeed;
-            }
-            Vector2 steer = target - body.velocity;
-            if (steer.sqrMagnitude > maxSteeringForce)
+            targetDir *= maxSpeed;
+            Vector2 steer = targetDir - body.velocity;
+            if (steer.sqrMagnitude > maxSteeringForce * maxSteeringForce)
             {
                 steer = steer.normalized * maxSteeringForce;
             }
