@@ -8,8 +8,10 @@ namespace LD51
     {
         [SerializeField]
         private SpriteRenderer _sprite;
+        [SerializeField]
+        private Collider2D _collider;
 
-        public float Radius => _sprite.bounds.size.x / 2;
+        public float Radius => _collider.bounds.size.x / 2;
         public Color Color => _sprite.color;
     }
 }

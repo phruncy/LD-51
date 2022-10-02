@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7260878107593289118}
   - component: {fileID: 7746662273455689024}
+  - component: {fileID: 548230526145739415}
+  - component: {fileID: 7406817628530048127}
   m_Layer: 0
   m_Name: SeedCircle
   m_TagString: Untagged
@@ -84,6 +86,66 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &548230526145739415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848517559208859102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b003c4783ef70ab448bf3ae037f265b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprite: {fileID: 7746662273455689024}
+  _colorChange:
+    serializedVersion: 2
+    key0: {r: 0.48235294, g: 0.48235294, b: 0.48235294, a: 1}
+    key1: {r: 0.96862745, g: 1, b: 0.30980393, a: 1}
+    key2: {r: 1, g: 1, b: 1, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  _consumer: {fileID: 3810061759384971422}
+  _lerpTime: 0.2
+--- !u!58 &7406817628530048127
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848517559208859102}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997
 --- !u!1 &2402529380220752846
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6981771125054097922
 Transform:
   m_ObjectHideFlags: 0
@@ -326,6 +388,7 @@ GameObject:
   - component: {fileID: 5716131924330691035}
   - component: {fileID: 50565306998979228}
   - component: {fileID: 5763288207502321727}
+  - component: {fileID: 5986404509874747050}
   m_Layer: 0
   m_Name: Seed
   m_TagString: Untagged
@@ -378,6 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 7746662273455689024}
+  _collider: {fileID: 7406817628530048127}
 --- !u!114 &3810061759384971422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,3 +549,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5986404509874747050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8498762950670753268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8c88fe10118734c83807a425b67481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _farmPrefab: {fileID: 6096105473412239542, guid: 1809d769d0ece084189ecfb0c6c32cda, type: 3}
+  _seed: {fileID: 5817231525477474092}
+  _delay: 1

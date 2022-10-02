@@ -11,7 +11,7 @@ namespace LD51
 
 		private void Start()
 		{
-			FindObjectOfType<Tree>().Add(new Branch(_connection));
+			FindObjectOfType<Tree>().Add(_connection);
 		}
 	}
 }

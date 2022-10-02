@@ -26,5 +26,9 @@ namespace LD51
         [SerializeField]
         private float _slotOnSize = 0.5f;
         public float SlotOnSize => _slotOnSize;
+
+        [SerializeField]
+        private float _minNodeSize = 0.75f;
+        public float MinNodeSize => _minNodeSize;
     }
 }

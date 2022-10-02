@@ -33,7 +33,7 @@ namespace LD51
 
 		private void UpdateSeedSlotsActive(SeedSlots slots)
 		{
-			int validSeedAmount = (int) (slots.Node.Radius / _settings.SlotOnSize);
+			int validSeedAmount = (int) ((slots.Node.Radius - _settings.MinNodeSize + _settings.SlotOnSize) / _settings.SlotOnSize);
 			int activeAmount = slots.Values.Count(s => s.Active);
 			int activatabledSlotsAmount = validSeedAmount - activeAmount;
 			int slotsLeftToActovate = slots.Values.Length - activeAmount;
