@@ -15,6 +15,7 @@ namespace LD51
         [SerializeField]
         private SeedToTargetMover _moveToTarget;
         public SeedToTargetMover MoveToTarget => _moveToTarget;
+        public EnergyConsumer EnergyConsumer => _energyConsumer;
         public Node Node => _node;
 
 		private void Start()

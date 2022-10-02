@@ -62,7 +62,7 @@ namespace LD51
 
 		private void HandleTargetReached()
 		{
-			_target.Consumer.Provide(_target.EnergyAmount);
+			_target.Consumer?.Provide(_target.EnergyAmount);
 			Destroy(_energy.gameObject);
 			Destroy(gameObject);
 		}

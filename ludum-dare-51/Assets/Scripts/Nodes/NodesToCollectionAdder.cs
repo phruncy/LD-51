@@ -13,5 +13,10 @@ namespace LD51
 		{
 			FindObjectOfType<NodesController>().Add(_node);
 		}
+
+		private void OnDestroy()
+		{
+			FindObjectOfType<NodesController>()?.Remove(_node);
+		}
 	}
 }

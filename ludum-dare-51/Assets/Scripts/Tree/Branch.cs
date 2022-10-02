@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,16 +7,18 @@ namespace LD51
 {
     public class Branch
     {
-        public Node PreviousNode { get; }
-        public Node Node { get; }
+        public Branch Parent { get; private set; }
+        public Node Node { get; private set; }
         public NodeConnection NodeConnection { get; }
 
         private List<Branch> _branches = new List<Branch>();
+        public IReadOnlyCollection<Branch> Branches => _branches;
 
         public Branch(
+            Branch parent,
             NodeConnection connection)
 		{
-            PreviousNode = connection.StartNode;
+            Parent = parent;
             NodeConnection = connection;
             Node = connection.EndNode;
         }
@@ -24,7 +27,7 @@ namespace LD51
         public Branch(
             Node node)
 		{
-            PreviousNode = null;
+            Parent = null;
             NodeConnection = null;
             Node = node;
         }
@@ -38,5 +41,15 @@ namespace LD51
 		{
             _branches.Remove(branch);
         }
-    }
+
+        public void SetNode(Node newNode)
+		{
+            Node = newNode;
+        }
+
+        public void SetParent(Branch parent)
+		{
+            Parent = parent;
+        }
+	}
 }

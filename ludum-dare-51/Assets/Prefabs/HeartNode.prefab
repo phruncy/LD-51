@@ -324,6 +324,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 314282132177090023, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314282132177090023, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: m_Color.g
+      value: 0.85925615
+      objectReference: {fileID: 0}
+    - target: {fileID: 314282132177090023, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 314282132177090023, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: _maxSize
       value: 3
@@ -332,6 +348,10 @@ PrefabInstance:
       propertyPath: _growthFactor.m_Curve.Array.data[1].value
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5446084251163700088, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: _collider
+      value: 
+      objectReference: {fileID: 263396194946858385}
     - target: {fileID: 5446084251163700088, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: _seedSlots.Array.size
       value: 6
@@ -413,6 +433,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3286365675892040526}
   m_SourcePrefab: {fileID: 100100000, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+--- !u!58 &263396194946858385 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8317095865291311491, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+  m_PrefabInstance: {fileID: 8127739409856476178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4278392345713844072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5446084251163700090, guid: b0736f0f413a9de4081fa992daddd313, type: 3}

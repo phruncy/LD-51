@@ -8,6 +8,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 314282132177090023, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 314282132177090023, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6666665
+      objectReference: {fileID: 0}
+    - target: {fileID: 314282132177090023, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314282132177090023, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: _maxSize
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2035984176766040841, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: _growthFactor.m_Curve.Array.data[1].value
       value: 0.1
@@ -28,9 +48,13 @@ PrefabInstance:
       propertyPath: _seedSlots.Array.data[2]
       value: 
       objectReference: {fileID: 8543811774938076055}
+    - target: {fileID: 5446084251163700089, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5446084251163700090, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5446084251163700090, guid: b0736f0f413a9de4081fa992daddd313, type: 3}
       propertyPath: m_LocalPosition.x

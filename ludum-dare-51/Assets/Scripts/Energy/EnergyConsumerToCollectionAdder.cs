@@ -13,5 +13,10 @@ namespace LD51
 		{
 			FindObjectOfType<EnergyController>().Add(_consumer);
 		}
+
+		private void OnDestroy()
+		{
+			FindObjectOfType<EnergyController>()?.Remove(_consumer);
+		}
 	}
 }
