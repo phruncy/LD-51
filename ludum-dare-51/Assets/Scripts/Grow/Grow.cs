@@ -15,6 +15,9 @@ namespace LD51
         [SerializeField]
         private float _growthPerSecond = 0.15f;
 
+        public Transform Transform => _transform;
+        public float MaxSize => _maxSize;
+
 
 		private void Update()
 		{
