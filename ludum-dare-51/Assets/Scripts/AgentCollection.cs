@@ -10,11 +10,17 @@ namespace LD51
         [SerializeField]
         private Agent prefab;
 
-        internal void add(Vector3 position)
+        internal void Add(Vector3 position)
         {
             Agent agent = GameObject.Instantiate(prefab, position, Quaternion.identity);
             agent.transform.SetParent(transform);
             agent.SeekTarget();
         }
+
+        public void Remove(Agent agent)
+        {
+
+        }
+        
     }
 }
