@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544780c24addd024999634d43e5d585b, type: 3}
   m_Name: HeartSettings
   m_EditorClassIdentifier: 
-  _baseEnergyPerTick: 3
+  _baseEnergyPerTick: 7

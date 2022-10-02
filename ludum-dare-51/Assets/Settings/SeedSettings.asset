@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb53550684ba7cb4d99db031fb053e6a, type: 3}
   m_Name: SeedSettings
   m_EditorClassIdentifier: 
-  _growCosts: 5
+  _growCosts: 10
   _priority: 1
   _distanceFromNode: 2
   _angleVariance: 20

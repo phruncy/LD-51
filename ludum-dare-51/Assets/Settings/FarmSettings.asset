@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2121f397bf27e4580ced517639f4cf, type: 3}
   m_Name: FarmSettings
   m_EditorClassIdentifier: 
-  _baseEnergyGerneration: 1
+  _baseEnergyGerneration: 2
