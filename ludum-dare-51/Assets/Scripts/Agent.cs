@@ -7,30 +7,39 @@ namespace LD51
     public class Agent : MonoBehaviour
     {
         [SerializeField]
-        private float speed;
+        private float maxSpeed;
         [SerializeField]
-        private Vector3 movement;
+        private float maxSteeringForce;
         [SerializeField]
-        private float steeringForce;
+        private Rigidbody2D body;
         [SerializeField]
         private Node _target;
         public Node target
         {
             get => _target;
         }
+        private Vector2 acceleration;
+        [SerializeField]
+        private float brakingDistance = 4.0f;
+        private float SqrMaxSpeed => maxSpeed * maxSpeed;
 
-        public float delta => speed * 0.1f;
+        public float delta => maxSpeed * 0.01f;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
+        private void FixedUpdate()
         {
             MoveToTarget();
+        }
+
+        private void MoveToTarget()
+        {
+            if (_target)
+            {
+                Vector2 desired = _target.transform.position - transform.position;
+                Vector2 steer = GetSteer(desired);
+                acceleration += steer;
+                Move();
+                Face(body.velocity);
+            }
         }
 
         /// <summary>
@@ -51,26 +60,43 @@ namespace LD51
             }
         }
 
-        private void MoveToTarget()
+        private void Face(Vector2 target)
         {
-            if (_target)
-            {
-                Vector3 steeringDir = _target.transform.position - transform.position;
-                if (steeringDir.sqrMagnitude > delta)
-                {
-                    steeringDir.Normalize();
-                    movement += steeringDir * steeringForce;
-                    movement.Normalize();
-                    Move();
-                }
+            Quaternion targetRotation = Quaternion.LookRotation(target);
+            targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
+            body.MoveRotation(targetRotation);
+        }
 
+        private Vector2 GetSteer(Vector2 target)
+        {
+            float distance = target.magnitude;
+            if (distance < brakingDistance)
+            {
+                target.Normalize();
+                float magnitude = (distance / brakingDistance) * maxSpeed;
+                target *= magnitude;
             }
+            else
+            {
+                target *= maxSpeed;
+            }
+            Vector2 steer = target - body.velocity;
+            if (steer.sqrMagnitude > maxSteeringForce)
+            {
+                steer = steer.normalized * maxSteeringForce;
+            }
+            return steer;
         }
 
         private void Move()
         {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, movement);
-            transform.position += movement * Time.deltaTime;
+            body.AddForce(acceleration);
+            acceleration *= 0;
+            if (body.velocity.sqrMagnitude > SqrMaxSpeed)
+            {
+                Vector2 velocity = body.velocity.normalized;
+                body.velocity = velocity * maxSpeed;
+            }
         }
     }
 }
