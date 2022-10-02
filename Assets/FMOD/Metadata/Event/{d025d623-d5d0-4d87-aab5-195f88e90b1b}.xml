@@ -421,8 +421,8 @@
 	<object class="MixerBusEffectChain" id="{dedb304c-acf4-4f17-940e-62a958c48148}">
 		<relationship name="effects">
 			<destination>{d8bcac3f-1967-44da-9390-fae1d6e72a2c}</destination>
-			<destination>{2185e1b1-baf7-4889-974f-3326fcb84bc1}</destination>
 			<destination>{31c771e0-d562-41fc-95af-8ac9508e42d6}</destination>
+			<destination>{2185e1b1-baf7-4889-974f-3326fcb84bc1}</destination>
 			<destination>{2653ded7-2f34-4507-af2c-e5e3ef2ebd82}</destination>
 			<destination>{048cd0e0-f6da-4b5a-874c-2bb6cf82d8d0}</destination>
 		</relationship>
@@ -489,22 +489,14 @@
 		<property name="lowGain">
 			<value>-6</value>
 		</property>
+		<property name="midGain">
+			<value>5</value>
+		</property>
 		<property name="highGain">
-			<value>-3</value>
+			<value>3.5</value>
 		</property>
 		<property name="lowCrossover">
 			<value>950</value>
-		</property>
-	</object>
-	<object class="CompressorEffect" id="{2185e1b1-baf7-4889-974f-3326fcb84bc1}">
-		<property name="threshold">
-			<value>-16</value>
-		</property>
-		<property name="attackTime">
-			<value>5</value>
-		</property>
-		<property name="gain">
-			<value>11</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{31c771e0-d562-41fc-95af-8ac9508e42d6}">
@@ -512,19 +504,39 @@
 			<value>8</value>
 		</property>
 		<property name="lateDelay">
-			<value>12</value>
+			<value>78</value>
 		</property>
 		<property name="HFDecayRatio">
 			<value>100</value>
 		</property>
+		<property name="lowShelfFrequency">
+			<value>58</value>
+		</property>
 		<property name="highCut">
-			<value>20000</value>
+			<value>4000</value>
 		</property>
 		<property name="earlyLateMix">
 			<value>56</value>
 		</property>
 		<property name="wetLevel">
 			<value>-19.5</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{2185e1b1-baf7-4889-974f-3326fcb84bc1}">
+		<property name="threshold">
+			<value>-35</value>
+		</property>
+		<property name="ratio">
+			<value>3.10000014</value>
+		</property>
+		<property name="attackTime">
+			<value>3</value>
+		</property>
+		<property name="releaseTime">
+			<value>50</value>
+		</property>
+		<property name="gain">
+			<value>16</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{2653ded7-2f34-4507-af2c-e5e3ef2ebd82}" />
