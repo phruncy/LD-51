@@ -80,7 +80,6 @@ namespace LD51
             CreateConnection(seed, slot);
             slot.AddSeed(seed);
             slot.OnSlotActivated -= PlaceSeed;
-            Debug.Log("Seed placed");
         }
 
 		private void SetPosition(Seed seed, SeedSlot slot)

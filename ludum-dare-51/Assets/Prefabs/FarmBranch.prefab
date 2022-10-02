@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BranchNode
       objectReference: {fileID: 0}
+    - target: {fileID: 6221102757133324826, guid: 1c247438ae776d649adf1572017db6bc, type: 3}
+      propertyPath: _maxSize
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c247438ae776d649adf1572017db6bc, type: 3}

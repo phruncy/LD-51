@@ -24,7 +24,6 @@ namespace LD51
 		{
             Active = true;
             OnSlotActivated?.Invoke(this);
-            Debug.Log("Slot Activated");
         }
 	}
 }

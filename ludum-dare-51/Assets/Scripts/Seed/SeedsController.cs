@@ -38,7 +38,6 @@ namespace LD51
             if (inactiveUnoccupiedSlots.Count == 0)
                 return null;
             int index = _random.Next(inactiveUnoccupiedSlots.Count);
-            Debug.Log(index);
             return inactiveUnoccupiedSlots[index];
         }
     }

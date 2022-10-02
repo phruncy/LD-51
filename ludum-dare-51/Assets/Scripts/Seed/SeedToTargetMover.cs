@@ -32,7 +32,6 @@ namespace LD51
 		private void UpdateMoveToTarget()
 		{
             Vector3 target = DistanceVector * _energyConsumer.Progress;
-            Debug.Log($"SeedToTargetMover Target {target}");
             _moveToTarget.Target = target;
         }
 
