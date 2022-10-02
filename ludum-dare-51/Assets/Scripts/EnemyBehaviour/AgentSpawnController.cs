@@ -24,7 +24,7 @@ namespace LD51
         private RepeatingTimer _timer;
         private int _currentLevel = 0;
         private int _timerCount = 0;
-        private const float SCREEN_OFFSET = 1.0f;
+        private const float SCREEN_OFFSET = 15.0f;
 
         private void Start()
         {
