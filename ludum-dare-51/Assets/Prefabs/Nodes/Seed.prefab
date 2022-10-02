@@ -561,6 +561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8c88fe10118734c83807a425b67481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _farmPrefab: {fileID: 6096105473412239542, guid: 1809d769d0ece084189ecfb0c6c32cda, type: 3}
+  _slotPrefab: {fileID: 6305442299919521227, guid: 1809d769d0ece084189ecfb0c6c32cda, type: 3}
   _seed: {fileID: 5817231525477474092}
   _delay: 1

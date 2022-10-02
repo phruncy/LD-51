@@ -5,15 +5,15 @@ using UnityEngine;
 
 namespace LD51
 {
-	public class FarmNodeMenuTogglerOnSelect : MenuTogglerOnSelect
+	public class SlotMenuTogglerOnSelect : MenuTogglerOnSelect
 	{
 		[SerializeField]
-		private Farm _farm;
+		private NodeSlot _slot;
 
 		protected override Menu GetMenu()
 		{
-			FarmNodeMenu result = FindObjectOfType<FarmNodeMenu>(true);
-			result.Set(_farm);
+			SlotNodeMenu result = FindObjectOfType<SlotNodeMenu>(true);
+			result.Set(_slot);
 			return result;
 		}
 	}

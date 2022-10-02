@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace LD51
 {
-    public class FarmFromSeedCreator : MonoBehaviour
+    public class SlotFromSeedCreator : MonoBehaviour
     {
         [SerializeField]
-        private Farm _farmPrefab;
+        private NodeSlot _slotPrefab;
         [SerializeField]
         private Seed _seed;
 		[SerializeField]
@@ -37,7 +37,7 @@ namespace LD51
 		private IEnumerator CreateFarm()
 		{
 			yield return new WaitForSeconds(_delay);
-			Farm farm = Instantiate(_farmPrefab, _seed.transform.parent, false);
+			NodeSlot farm = Instantiate(_slotPrefab, _seed.transform.parent, false);
 			farm.transform.position = _seed.transform.position;
 			_tree.ReplaceNode(_seed.Node, farm.Node);
 			Destroy(_seed.gameObject);
