@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{f0f0477f-63b4-42a3-91f2-8d054b2ba130}">
+		<property name="assetPath">
+			<value>tensec/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7b2e457d-da40-45f1-86dc-ee77c7a59bed}</destination>
+		</relationship>
+	</object>
+</objects>
