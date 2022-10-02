@@ -15,6 +15,6 @@ MonoBehaviour:
   _growCosts: 10
   _priority: 1
   _distanceFromNode: 2
-  _angleVariance: 20
+  _angleVariance: 30
   _slotOnSize: 0.3
   _minNodeSize: 0.4
