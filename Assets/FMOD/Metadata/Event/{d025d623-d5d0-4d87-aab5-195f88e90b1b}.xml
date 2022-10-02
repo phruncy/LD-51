@@ -34,6 +34,9 @@
 		<relationship name="timeline">
 			<destination>{0d5172cc-26d9-4c9c-8231-23f95761a4f4}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{860567b0-bf43-4ec1-9ec2-fcb98539f0f9}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{ff808109-6470-405e-a80a-5e2eed8c48ce}">
 		<relationship name="masterBus">
@@ -501,7 +504,7 @@
 			<value>5</value>
 		</property>
 		<property name="gain">
-			<value>-1</value>
+			<value>11</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{31c771e0-d562-41fc-95af-8ac9508e42d6}">
