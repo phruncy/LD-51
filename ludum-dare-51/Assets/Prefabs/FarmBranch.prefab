@@ -280,6 +280,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BranchNode
       objectReference: {fileID: 0}
+    - target: {fileID: 5640761567306636532, guid: 1c247438ae776d649adf1572017db6bc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640761567306636532, guid: 1c247438ae776d649adf1572017db6bc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640761567306636532, guid: 1c247438ae776d649adf1572017db6bc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.60784316
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c247438ae776d649adf1572017db6bc, type: 3}

@@ -166,18 +166,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heart
       objectReference: {fileID: 0}
-    - target: {fileID: 4867824544661179162, guid: e43139ac8c6a54c4d883e1433685b5c6, type: 3}
-      propertyPath: _colorChange.key0.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4867824544661179162, guid: e43139ac8c6a54c4d883e1433685b5c6, type: 3}
-      propertyPath: _colorChange.key0.g
-      value: 0.88436985
-      objectReference: {fileID: 0}
-    - target: {fileID: 4867824544661179162, guid: e43139ac8c6a54c4d883e1433685b5c6, type: 3}
-      propertyPath: _colorChange.key0.r
-      value: 0.45098042
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e43139ac8c6a54c4d883e1433685b5c6, type: 3}
