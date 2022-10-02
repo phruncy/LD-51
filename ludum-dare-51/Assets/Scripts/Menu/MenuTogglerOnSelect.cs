@@ -28,7 +28,7 @@ namespace LD51
 
 		private void Show()
 		{
-			_menu.Show(_selectable.transform.position);
+			_menu.Show(Camera.main.WorldToScreenPoint(_selectable.transform.position));
 			_menu.OnDismiss += OnDismiss;
 			_menu.OnHide += OnHide;
 		}

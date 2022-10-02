@@ -5,15 +5,15 @@ using UnityEngine;
 
 namespace LD51
 {
-	public class FarmNodeMenu : RadialMenu
+	public class SlotNodeMenu : RadialMenu
 	{
 		[SerializeField]
-		private RadialMenuOption _upgradeButton;
+		private RadialMenuOption _farmButton;
 		[SerializeField]
-		private RadialMenuOption _buildTowerButton;
+		private RadialMenuOption _towerButton;
 		private List<RadialMenuOption> _options;
 
-		private Farm _farm;
+		private NodeSlot _slot;
 
 		protected override List<RadialMenuOption> GetOptions()
 		{
@@ -26,30 +26,30 @@ namespace LD51
 			gameObject.SetActive(false);
 			_options = new List<RadialMenuOption>
 			{
-				_upgradeButton,
-				_buildTowerButton
+				_farmButton,
+				_towerButton
 			};
 		}
 
-		public void Set(Farm farm)
+		public void Set(NodeSlot slot)
 		{
-			_farm = farm;
+			_slot = slot;
 			SetupOptions();
 		}
 
 		private void SetupOptions()
 		{
-			_upgradeButton.Setup(() => Upgrade(_farm));
-			_buildTowerButton.Setup(() => BuildTower(_farm));
+			_farmButton.Setup(() => Upgrade(_slot));
+			_towerButton.Setup(() => BuildTower(_slot));
 		}
 
-		private void Upgrade(Farm farm)
+		private void Upgrade(NodeSlot slot)
 		{
-			Debug.Log($"Upgrade {farm.name}");
+			Debug.Log($"Upgrade {slot.name}");
 			Dismiss();
 		}
 
-		private void BuildTower(Farm farm)
+		private void BuildTower(NodeSlot farm)
 		{
 			Debug.Log($"Build {farm.name}");
 			Dismiss();
