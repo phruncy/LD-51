@@ -4,21 +4,34 @@ using UnityEngine;
 
 namespace LD51
 {
-    }
     public class AmbientSoundtrackController : MonoBehaviour
     {
         [SerializeField]
-        private FMODUnity.StudioEventEmitter emitter;
+        private FMODUnity.StudioEventEmitter _emitter;
 
-        // Start is called before the first frame update
+        [SerializeField]
+        private NodesController _nodes;
+
+        private float _depthLevel1 = 0;
+        private const float DEPTH01_CONTRIBUTION_PER_NODE = 0.05f;
+
         void Start()
         {
-            emitter.Play();
+            _emitter.Play();
         }
 
-        // Update is called once per frame
         void Update()
         {
-        
+            CheckFadeInDepth();
+        }
+
+        private void CheckFadeInDepth()
+        {
+            if (_depthLevel1 < 1f)
+            {
+                _depthLevel1 = _nodes.Count * DEPTH01_CONTRIBUTION_PER_NODE;
+                _emitter.SetParameter("depth-1", _depthLevel1);
+            }
         }
     }
+}

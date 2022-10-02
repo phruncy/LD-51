@@ -14,16 +14,19 @@ namespace LD51
         [SerializeField]
         private AgentCollection targetCollection;
 
+        private RepeatingTimer _timer;
+
         // Start is called before the first frame update
         void Start()
         {
+            _timer = FindObjectOfType<RepeatingTimer>();
+            _timer.OnFinished += Spawn;
             Spawn();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void OnDestroy()
         {
-        
+            _timer.OnFinished -= Spawn;
         }
 
         void Spawn()

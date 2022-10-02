@@ -7,7 +7,8 @@ namespace LD51
 {
     public class NodesController : MonoBehaviour
     {
-        private List<Node> _values = new List<Node>();
+		public int Count => _values.Count();
+		private List<Node> _values = new List<Node>();
 
 		public void Add(Node node)
 		{
