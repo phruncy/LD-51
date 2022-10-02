@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{4652f75f-aa0a-4803-a4cd-d8a72e754578}">
+		<property name="name">
+			<value>tensec-depth</value>
+		</property>
+		<relationship name="folder">
+			<destination>{8022b7e0-c0e9-43d6-988a-2e13f21856e6}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{4d416657-a1bf-4ffb-8c2c-6f300f5dae96}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{4d416657-a1bf-4ffb-8c2c-6f300f5dae96}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
