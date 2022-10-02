@@ -26,7 +26,9 @@ namespace LD51
 			{
                 if (energyLeft <= 0)
                     break;
-                int amount = Mathf.Min(energyLeft, consumer.RequiredEnergy);
+                if (consumer.Progress == 1)
+                    continue;
+                int amount = Mathf.Min(energyLeft, consumer.MissingEnergy);
                 energyLeft -= amount;
                 result.Add(new EnergyTarget
                 {

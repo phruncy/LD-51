@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6681288729529427673}
   - component: {fileID: 648878534081710613}
+  - component: {fileID: 2566543171453516959}
   m_Layer: 0
   m_Name: SeedSlot
   m_TagString: Untagged
@@ -46,7 +47,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _node: {fileID: 0}
-  _settings: {fileID: 11400000, guid: 2f6f4cf9114abe649805f8cdce528908, type: 2}
+--- !u!95 &2566543171453516959
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726580422175733942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69bf1bc6b955baf4a8a8585f714c0daf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8370321350539967203
 GameObject:
   m_ObjectHideFlags: 0

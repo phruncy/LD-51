@@ -22,7 +22,7 @@ namespace LD51
             _startScale = _target.localScale;
         }
 
-        public void StartPulse(float delay)
+        public void StartPulse(float delay = 0)
 		{
             StartCoroutine(DoPulsate(delay));
 		}

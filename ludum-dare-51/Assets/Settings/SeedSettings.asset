@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _growCosts: 5
   _priority: 1
+  _distanceFromSlot: 3
+  _angleVariance: 40

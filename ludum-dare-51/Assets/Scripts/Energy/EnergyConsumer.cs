@@ -13,20 +13,20 @@ namespace LD51
 
         public int RequiredEnergy { get; private set; } = 0;
         public int Priority { get; } = 0;
-        public float Progress => RequiredEnergy != 0 ? (float)_providedEnergy / RequiredEnergy : 1;
+        public float Progress => RequiredEnergy != 0 ? (float)ProvidedEnergy / RequiredEnergy : 1;
         public event Action OnPogress;
         public event Action OnComplete;
         public event Action OnRequiredEnergyChanged;
 
-
-        private int _providedEnergy = 0;
+		public int ProvidedEnergy { get; private set; } = 0;
+		public int MissingEnergy => RequiredEnergy - ProvidedEnergy;
 
         public void Provide(int energy)
 		{
-            _providedEnergy = Mathf.Clamp(_providedEnergy + energy, 0, RequiredEnergy);
+            ProvidedEnergy = Mathf.Clamp(ProvidedEnergy + energy, 0, RequiredEnergy);
             OnPogress?.Invoke();
 
-            if (_providedEnergy == RequiredEnergy)
+            if (ProvidedEnergy == RequiredEnergy)
                 OnComplete?.Invoke();
         }
 
