@@ -5,7 +5,7 @@
 			<value>tensecfx</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{7bd6bbc3-88a3-4ee6-8ef6-ddfc5b825232}</destination>
@@ -331,7 +331,6 @@
 	<object class="MixerBusEffectChain" id="{1a0791f2-d360-4bc6-b5a0-b0fddc0ab7a4}">
 		<relationship name="effects">
 			<destination>{152ea09e-5fe2-4b72-bc02-1cf77152b627}</destination>
-			<destination>{1faf93a6-9ca8-4d85-8650-0ed693840534}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5f3d4335-c7e6-453c-8c35-513fcfb0795f}" />
@@ -447,7 +446,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{7435e7e9-a182-4bea-9ebb-5175c3fda15b}" />
 	<object class="MixerBusFader" id="{152ea09e-5fe2-4b72-bc02-1cf77152b627}" />
-	<object class="SpatialiserEffect" id="{1faf93a6-9ca8-4d85-8650-0ed693840534}" />
 	<object class="AutomationPoint" id="{f585f2ed-327d-4a69-9a14-4bf595685ef6}">
 		<property name="position">
 			<value>7.2000000000000002</value>

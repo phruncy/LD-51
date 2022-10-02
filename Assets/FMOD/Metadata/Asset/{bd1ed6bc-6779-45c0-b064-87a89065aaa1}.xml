@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{bd1ed6bc-6779-45c0-b064-87a89065aaa1}">
+		<property name="assetPath">
+			<value>sfx/enemyspawn/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7b2e457d-da40-45f1-86dc-ee77c7a59bed}</destination>
+		</relationship>
+	</object>
+</objects>

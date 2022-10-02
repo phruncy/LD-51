@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{05c015c1-e7ee-4344-b5fd-42cae284f19c}">
 		<property name="assetPath">
-			<value>music_drone synth.flac</value>
+			<value>music/music_drone synth.flac</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

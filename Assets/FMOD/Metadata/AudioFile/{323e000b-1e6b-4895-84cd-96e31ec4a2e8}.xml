@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{323e000b-1e6b-4895-84cd-96e31ec4a2e8}">
 		<property name="assetPath">
-			<value>tensec/music_tensec-max-droplet.flac</value>
+			<value>sfx/tensec/music_tensec-max-droplet.flac</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

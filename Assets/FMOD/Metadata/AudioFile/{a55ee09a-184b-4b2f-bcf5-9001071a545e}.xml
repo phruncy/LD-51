@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{a55ee09a-184b-4b2f-bcf5-9001071a545e}">
+		<property name="assetPath">
+			<value>sfx/enemyspawn/enemyspawn_2.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.080770975056689343</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7b2e457d-da40-45f1-86dc-ee77c7a59bed}</destination>
+		</relationship>
+	</object>
+</objects>
