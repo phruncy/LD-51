@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeartNode
       objectReference: {fileID: 0}
+    - target: {fileID: 7308523930369608921, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7821278367076093723, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
       propertyPath: _growthPerSecond
       value: 0.065
