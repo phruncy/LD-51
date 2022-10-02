@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3362965760147401716, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5877600808147731334, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: m_Color.b
       value: 0.45574024
@@ -22,11 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7838770983948620131, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: m_Name
-      value: SingleHitAgent
+      value: SingleHitAgent Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838770983948620131, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7838770983948620142, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7838770983948620142, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: m_LocalPosition.x
@@ -86,17 +94,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06481a94f147947338bdb14d10cc48e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 8609333033203052103}
---- !u!114 &8609333033203052103 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7612477275107655026, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
-  m_PrefabInstance: {fileID: 2224370813822096181}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8220870139264451158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38ccc08ab7a2e495086812c70294b451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

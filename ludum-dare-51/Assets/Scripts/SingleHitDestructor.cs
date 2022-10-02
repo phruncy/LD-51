@@ -10,6 +10,7 @@ namespace LD51
         {
             if (collision.gameObject.tag == "Node")
                 InitializeDestruction();
+
         }
 
         private void InitializeDestruction()
