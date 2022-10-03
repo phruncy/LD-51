@@ -113,11 +113,8 @@ namespace LD51
         {
             _body.AddForce(acceleration, ForceMode2D.Force);
             acceleration *= 0;
-            if (_body.velocity.sqrMagnitude > SqrMaxSpeed)
-            {
-                Vector2 velocity = _body.velocity.normalized;
-                _body.velocity = velocity * maxSpeed;
-            }
+            Vector2 velocity = _body.velocity.normalized;
+            _body.velocity = velocity * maxSpeed;
         }
     }
 }

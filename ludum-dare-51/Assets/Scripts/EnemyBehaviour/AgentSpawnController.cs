@@ -48,6 +48,8 @@ namespace LD51
             if (_timerCount % _spawnIntervall == 0)
             {
                 SpawnLevel lvl = _settings.GetLevel(_currentLevel);
+                if (lvl.AgentCount <= 0)
+                    return;
                 ExecuteLevel(lvl);
                 OnSpawn?.Invoke();
             }
