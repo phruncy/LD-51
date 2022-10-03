@@ -8,5 +8,8 @@ namespace LD51
     {
         [SerializeField]
         private Agent _agent;
+        [SerializeField]
+        private Destructable _destructable;
+        public Destructable Destructable => _destructable;
     }
 }

@@ -9,8 +9,14 @@ namespace LD51
     {
         [SerializeField]
         private Tower _tower;
+		private BulletFactory _bulletFactory;
 
 		private float _timerTillNextShot = 0;
+
+		private void Start()
+		{
+			_bulletFactory = FindObjectOfType<BulletFactory>();
+		}
 
 		private void Update()
 		{
@@ -27,6 +33,8 @@ namespace LD51
 			Enemy closest = _tower.GetClosestEnemy();
 			if (closest == null)
 				return;
+
+			_bulletFactory.Create(transform.position, closest.transform.position);
 			_timerTillNextShot = _tower.LevelSettings.Delay;
 			_tower.ReduceShots();
 		}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5877600808147731334}
   - component: {fileID: 4129997625918091585}
   - component: {fileID: 1433588806880916896}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: TringleBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,9 +139,9 @@ GameObject:
   - component: {fileID: 7838770983948620142}
   - component: {fileID: 7612477275107655026}
   - component: {fileID: 3714612293945529552}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Agent
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 0.5
   maxSteeringForce: 5
-  _body: {fileID: 0}
+  _body: {fileID: 3714612293945529552}
   _target: {fileID: 0}
 --- !u!50 &3714612293945529552
 Rigidbody2D:

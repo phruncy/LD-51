@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _emitter: {fileID: 4453797325784403233}
-  _destructor: {fileID: 1423019389519036383}
+  _destructor: {fileID: 5860878549497658587}
 --- !u!1001 &2224370813822096181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,6 +85,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1433588806880916896, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
+      propertyPath: _destructable
+      value: 
+      objectReference: {fileID: 5860878549497658587}
     - target: {fileID: 3362965760147401716, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: m_TagString
       value: Enemy
@@ -133,10 +137,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 7612477275107655026, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
-      propertyPath: _body
-      value: 
-      objectReference: {fileID: 3265806043303692261}
     - target: {fileID: 7612477275107655026, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: maxSpeed
       value: 0.75
@@ -203,17 +203,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 9219393422418444750}
   m_SourcePrefab: {fileID: 100100000, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
---- !u!50 &3265806043303692261 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 3714612293945529552, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
-  m_PrefabInstance: {fileID: 2224370813822096181}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8220870139264451158 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7838770983948620131, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
   m_PrefabInstance: {fileID: 2224370813822096181}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1423019389519036383
+--- !u!114 &5860878549497658587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,9 +217,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8220870139264451158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06481a94f147947338bdb14d10cc48e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 748f246f4e8a1034b8b41f0b1e5b0aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _target: {fileID: 8220870139264451158}
+  _expectedColliderTags:
+  - Node
 --- !u!4 &8220870139264451163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7838770983948620142, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}

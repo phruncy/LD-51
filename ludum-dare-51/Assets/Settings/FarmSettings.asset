@@ -15,7 +15,7 @@ MonoBehaviour:
   _baseEnergyGerneration: 3
   _constructionSettings:
     _costs: 15
-    _priority: 2
+    _priority: 6
   _colorSettings:
     _sideColor: {r: 0.60784316, g: 0.78431374, b: 0.7019608, a: 1}
     _mainColor: {r: 0.08235294, g: 0.54901963, b: 0.5764706, a: 1}
