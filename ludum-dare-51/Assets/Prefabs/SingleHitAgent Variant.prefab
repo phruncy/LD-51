@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7612477275107655026, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: maxSpeed
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7612477275107655026, guid: a7320a12574ab417dbf7f1547ed26612, type: 3}
       propertyPath: maxSteeringForce

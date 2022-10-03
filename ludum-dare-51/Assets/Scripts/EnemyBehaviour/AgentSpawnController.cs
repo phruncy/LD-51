@@ -14,7 +14,7 @@ namespace LD51
         private AgentSpawnerIndicator _indicatorPrefab;
 
         [SerializeField]
-        private int _progressionStep = 3;
+        private int _progressionStep = 1;
 
         [SerializeField]
         private int _spawnIntervall = 2;

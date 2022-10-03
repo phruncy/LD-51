@@ -13,15 +13,51 @@ MonoBehaviour:
   m_Name: AgentSpawnSettings
   m_EditorClassIdentifier: 
   _spawnLevels:
-  - _agentCount: 7
+  - _agentCount: 0
+    _spawnRadius: 0
+    _minSpawnNumber: 0
+    _maxSpawnNumber: 0
+  - _agentCount: 3
+    _spawnRadius: 1
+    _minSpawnNumber: 1
+    _maxSpawnNumber: 1
+  - _agentCount: 0
+    _spawnRadius: 0
+    _minSpawnNumber: 0
+    _maxSpawnNumber: 0
+  - _agentCount: 2
     _spawnRadius: 2
     _minSpawnNumber: 1
     _maxSpawnNumber: 1
-  - _agentCount: 15
+  - _agentCount: 3
     _spawnRadius: 2
     _minSpawnNumber: 1
-    _maxSpawnNumber: 2
-  - _agentCount: 20
+    _maxSpawnNumber: 1
+  - _agentCount: 3
     _spawnRadius: 2
     _minSpawnNumber: 2
+    _maxSpawnNumber: 2
+  - _agentCount: 3
+    _spawnRadius: 2
+    _minSpawnNumber: 1
+    _maxSpawnNumber: 3
+  - _agentCount: 5
+    _spawnRadius: 2
+    _minSpawnNumber: 2
+    _maxSpawnNumber: 3
+  - _agentCount: 7
+    _spawnRadius: 2
+    _minSpawnNumber: 2
+    _maxSpawnNumber: 3
+  - _agentCount: 7
+    _spawnRadius: 2
+    _minSpawnNumber: 3
     _maxSpawnNumber: 4
+  - _agentCount: 10
+    _spawnRadius: 2
+    _minSpawnNumber: 3
+    _maxSpawnNumber: 4
+  - _agentCount: 12
+    _spawnRadius: 2
+    _minSpawnNumber: 3
+    _maxSpawnNumber: 5
