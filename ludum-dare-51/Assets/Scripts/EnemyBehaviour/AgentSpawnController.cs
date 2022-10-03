@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace LD51
@@ -24,7 +25,7 @@ namespace LD51
         private RepeatingTimer _timer;
         private int _currentLevel = 0;
         private int _timerCount = 0;
-        private const float SCREEN_OFFSET = 0.0f;
+        private const float SCREEN_OFFSET = 10.0f;
 
         private void Start()
         {
@@ -39,7 +40,17 @@ namespace LD51
                 _currentLevel++;
             if (_timerCount % _spawnIntervall == 0)
             {
-                Spawn();
+                SpawnLevel lvl = _settings.GetLevel(_currentLevel);
+                ExecuteLevel(lvl);
+            }
+        }
+
+        private void ExecuteLevel(SpawnLevel lvl)
+        {
+            int numSpawned = UnityEngine.Random.Range(lvl.MinSpawnnumber, lvl.MaxSpawnNumber + 1);
+            foreach (int index in Enumerable.Range(0, numSpawned))
+            {
+                Spawn(lvl);
             }
         }
 
@@ -48,10 +59,14 @@ namespace LD51
             _timer.OnFinished -= Step;
         }
 
-        /// <summary>
-        /// Places a Spawnpoint in a random direction outside of the Screen
-        /// </summary>
-        private void Spawn()
+        private void Spawn(SpawnLevel lvl)
+        {
+            Vector2 position = GetRandomPosition();
+            AgentSpawner spawner = GameObject.Instantiate(_spawnerPrefab);
+            spawner.Init(position, lvl, _collection);
+        }
+
+        private Vector2 GetRandomPosition()
         {
             Vector3 direction = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f), 0);
             Vector3 screen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
@@ -64,12 +79,8 @@ namespace LD51
             {
                 direction *= (screen.y / direction.y); 
             }
-            Vector3 offset = direction.normalized * SCREEN_OFFSET;
-            direction += offset;
-            Vector2 position = direction;
-            SpawnLevel lvl = _settings.GetLevel(_currentLevel);
-            AgentSpawner spawner = GameObject.Instantiate(_spawnerPrefab);
-            spawner.Init(position, lvl, _collection);
+            direction += direction.normalized * SCREEN_OFFSET;
+            return new Vector2(direction.x, direction.y);
         }
     }
 }

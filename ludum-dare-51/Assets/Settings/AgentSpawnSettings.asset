@@ -15,5 +15,13 @@ MonoBehaviour:
   _spawnLevels:
   - _agentCount: 10
     _spawnRadius: 2
+    _minSpawnNumber: 1
+    _maxSpawnNumber: 1
   - _agentCount: 15
     _spawnRadius: 2
+    _minSpawnNumber: 1
+    _maxSpawnNumber: 2
+  - _agentCount: 20
+    _spawnRadius: 2
+    _minSpawnNumber: 2
+    _maxSpawnNumber: 4

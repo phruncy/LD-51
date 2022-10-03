@@ -15,5 +15,13 @@ namespace LD51
         [SerializeField]
         private float _spawnRadius = 0;
         public float SpawnRadius => _spawnRadius;
+
+        [SerializeField]
+        private int _minSpawnNumber = 0;
+        public int MinSpawnnumber => _minSpawnNumber;
+
+        [SerializeField]
+        private int _maxSpawnNumber = 0;
+        public int MaxSpawnNumber => _maxSpawnNumber;
     }
 }
