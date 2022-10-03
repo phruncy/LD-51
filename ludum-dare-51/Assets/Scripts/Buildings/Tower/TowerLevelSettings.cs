@@ -17,5 +17,8 @@ namespace LD51
         [SerializeField]
         private float _distance = 5;
         public float Distance => _distance;
+        [SerializeField]
+        private float _delay = 0.8f;
+        public float Delay => _delay;
     }
 }
