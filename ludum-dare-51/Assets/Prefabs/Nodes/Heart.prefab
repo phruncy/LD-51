@@ -36,7 +36,7 @@ Transform:
   - {fileID: 8230917107047538785}
   - {fileID: 7012139401819045015}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1978271571748842632
 MonoBehaviour:
@@ -215,7 +215,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9764706, g: 0.69803923, b: 0.2, a: 1}
+  m_Color: {r: 0.9372549, g: 0.4862745, b: 0.19215687, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -242,8 +242,8 @@ MonoBehaviour:
   _indicator: {fileID: 633702296325609578}
   _colorChange:
     serializedVersion: 2
-    key0: {r: 0.9764706, g: 0.69803923, b: 0.2, a: 1}
-    key1: {r: 1, g: 0.5732898, b: 0, a: 1}
+    key0: {r: 0.98039216, g: 0.7607843, b: 0.5372549, a: 1}
+    key1: {r: 0.9372549, g: 0.4862745, b: 0.19215687, a: 1}
     key2: {r: 1, g: 0.5732898, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -251,7 +251,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
+    ctime1: 54889
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -384,6 +384,18 @@ PrefabInstance:
     - target: {fileID: 4278392345713844077, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
       propertyPath: m_Name
       value: HeartNode
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308523930369608921, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308523930369608921, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308523930369608921, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.98039216
       objectReference: {fileID: 0}
     - target: {fileID: 7308523930369608921, guid: e2f5617a51720a0499c65feddadeb2e3, type: 3}
       propertyPath: m_SortingOrder

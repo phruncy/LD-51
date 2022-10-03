@@ -13,9 +13,8 @@ namespace LD51
 		private void Start()
 		{
 			_selection = FindObjectOfType<Selection>();
-			_menu = GetMenu();
 			_selectable.OnSelected += Show;
-			_selectable.OnDeselected += _menu.Hide;
+			_selectable.OnDeselected += Hide;
 		}
 
 		protected abstract Menu GetMenu();
@@ -23,14 +22,20 @@ namespace LD51
 		private void OnDestroy()
 		{
 			_selectable.OnSelected -= Show;
-			_selectable.OnDeselected -= _menu.Hide;
+			_selectable.OnDeselected -= Hide;
 		}
 
 		private void Show()
 		{
+			_menu = GetMenu();
 			_menu.Show(Camera.main.WorldToScreenPoint(_selectable.transform.position));
 			_menu.OnDismiss += OnDismiss;
 			_menu.OnHide += OnHide;
+		}
+
+		private void Hide()
+		{
+			_menu.Hide();
 		}
 
 		private void OnDismiss()

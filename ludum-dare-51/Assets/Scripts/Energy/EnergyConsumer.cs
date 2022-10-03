@@ -9,10 +9,10 @@ namespace LD51
     {
         [SerializeField]
         private Node _node;
-        public Node Node => _node;
+        public Node Node {  get; private set; }
 
         public int RequiredEnergy { get; private set; } = 0;
-        public int Priority { get; } = 0;
+        public int Priority { get; private set; } = 0;
         public float Progress => RequiredEnergy != 0 ? (float)ProvidedEnergy / RequiredEnergy : 0;
         public event Action OnPogress;
         public event Action OnComplete;
@@ -21,7 +21,12 @@ namespace LD51
 		public int ProvidedEnergy { get; private set; } = 0;
 		public int MissingEnergy => RequiredEnergy - ProvidedEnergy;
 
-        public void Provide(int energy)
+		private void Awake()
+		{
+            Node = _node;
+        }
+
+		public void Provide(int energy)
 		{
             ProvidedEnergy = Mathf.Clamp(ProvidedEnergy + energy, 0, RequiredEnergy);
             OnPogress?.Invoke();
@@ -34,6 +39,16 @@ namespace LD51
 		{
             RequiredEnergy = value;
             OnRequiredEnergyChanged?.Invoke();
+        }
+
+        public void SetPriority(int value)
+		{
+            Priority = value;
+        }
+
+        public void SetNode(Node node)
+		{
+            Node = node;
         }
     }
 }

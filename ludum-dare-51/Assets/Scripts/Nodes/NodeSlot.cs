@@ -11,13 +11,23 @@ namespace LD51
         [SerializeField]
         private Transform _contentHook;
         public Node Node => _node;
-        public Transform Content { get; private set; }
+        public INodeSlotObject Content { get; private set; }
         public bool IsEmpty => Content != null;
 
-        public void SetContent(Transform content)
+        public void SetContent(INodeSlotObject content)
 		{
+            if (Content != null)
+                Content.OnDestruct -= RemoveContent;
             Content = content;
-            content.SetParent(_contentHook, false);
+            content.Base.SetParent(_contentHook, false);
+            content.Base.position = _contentHook.position;
+            Content.OnDestruct += RemoveContent;
+        }
+
+        public void RemoveContent()
+        {
+            Content.OnDestruct -= RemoveContent;
+            Content = null;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace LD51
         public int ConsumptionPrio => _consumptionPrio;
 
         [SerializeField]
-        private int _buildConsumptionPrio = 5;
-        public int BuildConsumptionPrio => _buildConsumptionPrio;
+        private NodeColorSettings _colorSettings;
+        public NodeColorSettings ColorSettings => _colorSettings;
     }
 }

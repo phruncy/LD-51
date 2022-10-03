@@ -9,8 +9,8 @@ namespace LD51
     public class TowerLevelSettings
     {
         [SerializeField]
-        private int _costs = 10;
-        public int Costs => _costs;
+        private ConstructionSettings _constructionSettings;
+        public ConstructionSettings ConstructionSettings => _constructionSettings;
         [SerializeField]
         private int _ammunition = 3;
         public int Ammonition => _ammunition;
