@@ -11,6 +11,8 @@ namespace LD51
 		public event Action OnHide;
 
 		public abstract void Show(Vector3 position);
+		public abstract void Show();
+
 		public void Hide()
 		{
 			DoHide();

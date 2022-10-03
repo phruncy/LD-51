@@ -22,6 +22,8 @@ namespace LD51
 
         private void Update()
         {
+            if (_heartGrow == null)
+                return;
             float value = _heartGrow.Transform.localScale.x / _heartGrow.MaxSize;
             _emitter.SetParameter("tensec-depth", value);
         }

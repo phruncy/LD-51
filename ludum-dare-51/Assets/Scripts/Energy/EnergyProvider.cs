@@ -10,7 +10,7 @@ namespace LD51
     {
         private EnergyController _controller;
         private RepeatingTimer _timer;
-		private Tree _tree;
+		private NodeTree _tree;
 
 		[SerializeField]
 		private EnergyPath _pathPrefab;
@@ -23,7 +23,7 @@ namespace LD51
 		{
 			_timer = FindObjectOfType<RepeatingTimer>();
 			_controller = FindObjectOfType<EnergyController>();
-			_tree = FindObjectOfType<Tree>();
+			_tree = FindObjectOfType<NodeTree>();
 			_timer.OnFinished += ProvideEnergy;
 		}
 

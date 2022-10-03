@@ -8,6 +8,11 @@ namespace LD51
     {
         private List<NodeSlotMenuOption> _currentOptions;
 
+        public override void Show()
+        {
+            Show(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+        }
+
         public override void Show(Vector3 position)
 		{
             _currentOptions = GetOptions();

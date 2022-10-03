@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 548230526145739415}
   - component: {fileID: 7406817628530048127}
   - component: {fileID: 1003400650143508174}
+  - component: {fileID: 4127653554983434965}
   m_Layer: 0
   m_Name: SeedCircle
   m_TagString: Node
@@ -157,6 +158,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00e647c77d2e244f886a5e6606d30734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _node: {fileID: 5532083777216473677}
+--- !u!114 &4127653554983434965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848517559208859102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb40f89094ad4fa6813779a65f196f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _node: {fileID: 5532083777216473677}

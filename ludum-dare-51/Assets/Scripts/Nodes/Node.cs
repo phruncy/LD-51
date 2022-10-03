@@ -27,7 +27,7 @@ namespace LD51
 
         public void Destruct()
 		{
-            Destroy(Hook);
+            Destroy(Hook.gameObject);
 		}
 
         public void SetHook(NodeHook hook)
@@ -38,7 +38,10 @@ namespace LD51
         public void Shrink(float damage)
         {
             if (damage > _lifeIndicatorTransform.localScale.x)
+            {
+                _lifeIndicatorTransform.localScale = Vector3.zero;
                 OnLifeZero?.Invoke();
+            }
             else
             {
                 Vector3 decrease = Vector3.one * damage;

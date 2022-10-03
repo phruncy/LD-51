@@ -8,19 +8,17 @@ namespace LD51
     {
         [SerializeField]
         private Node _node;
+        private NodeTree _tree;
 
         private void Start()
         {
             _node.OnLifeZero += Destruct;
+            _tree = FindObjectOfType<NodeTree>();
         }
 
         private void Destruct()
         {
-            Tree tree = FindObjectOfType<Tree>();
-            if (tree)
-                tree.DestroyBranch(_node);
-            else
-                Destroy(transform.gameObject);
+            _tree.DestroyBranch(_node);
         }
 
         private void OnDestroy()

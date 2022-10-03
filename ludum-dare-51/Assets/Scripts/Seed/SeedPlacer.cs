@@ -90,6 +90,7 @@ namespace LD51
             CreateConnection(seed, slot);
             slot.AddSeed(seed);
             slot.OnSlotActivated -= PlaceSeed;
+            seed.Node.SetHook(hook);
         }
 
 		private void SetPosition(Seed seed, SeedSlot slot)

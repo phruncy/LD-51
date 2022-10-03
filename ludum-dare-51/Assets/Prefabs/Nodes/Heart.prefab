@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3899418115277390914}
   - component: {fileID: 3611128174571483984}
   - component: {fileID: 3294244827229430867}
+  - component: {fileID: 1337461649474741916}
+  - component: {fileID: 3960675171661378013}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -36,7 +38,7 @@ Transform:
   - {fileID: 8230917107047538785}
   - {fileID: 7012139401819045015}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1978271571748842632
 MonoBehaviour:
@@ -101,6 +103,7 @@ MonoBehaviour:
   _energyProducer: {fileID: 3611128174571483984}
   _heartSettings: {fileID: 11400000, guid: 5610ffd4a67d57846aafa69543b6410b, type: 2}
   _node: {fileID: 8230917107047538787}
+  _nodeHook: {fileID: 1337461649474741916}
 --- !u!114 &3899418115277390914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +143,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _producer: {fileID: 3611128174571483984}
+--- !u!114 &1337461649474741916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412621096657425222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b27387a08610ff488fd3a56ce8416ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attatch: {fileID: 0}
+--- !u!114 &3960675171661378013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412621096657425222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff967de4e07ce940b5e2e7bc08c0337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameOverScreen: {fileID: 0}
 --- !u!1 &4982212699838270629
 GameObject:
   m_ObjectHideFlags: 0

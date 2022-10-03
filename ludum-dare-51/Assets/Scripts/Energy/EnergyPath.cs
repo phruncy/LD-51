@@ -35,8 +35,13 @@ namespace LD51
 
 		private void Update()
 		{
-			MoveEnergy();
-			CheckWaypointReached();
+			if (_currentWaypoint == null)
+				Destruct();
+			else
+			{
+				MoveEnergy();
+				CheckWaypointReached();
+			}
 		}
 
 		private void SetNextTarget()
@@ -63,6 +68,12 @@ namespace LD51
 		private void HandleTargetReached()
 		{
 			_target.Consumer?.Provide(_target.EnergyAmount);
+			Destruct();
+		}
+
+
+		private void Destruct()
+		{
 			Destroy(_energy.gameObject);
 			Destroy(gameObject);
 		}

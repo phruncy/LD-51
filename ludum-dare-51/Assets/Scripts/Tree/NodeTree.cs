@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace LD51
 {
-    public class Tree : MonoBehaviour
+    public class NodeTree : MonoBehaviour
     {
         [SerializeField]
         private Heart _heart;
@@ -59,6 +59,8 @@ namespace LD51
 
         public void DestroyBranch(Node owner)
         {
+            if (!_nodeToBranch.ContainsKey(owner))
+                return;
             DestroyBranch(_nodeToBranch[owner]);
         }
 
