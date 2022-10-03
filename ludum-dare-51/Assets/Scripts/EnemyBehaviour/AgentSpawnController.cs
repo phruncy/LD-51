@@ -24,7 +24,7 @@ namespace LD51
         private RepeatingTimer _timer;
         private int _currentLevel = 0;
         private int _timerCount = 0;
-        private const float SCREEN_OFFSET = 15.0f;
+        private const float SCREEN_OFFSET = 0.0f;
 
         private void Start()
         {
@@ -48,11 +48,22 @@ namespace LD51
             _timer.OnFinished -= Step;
         }
 
+        /// <summary>
+        /// Places a Spawnpoint in a random direction outside of the Screen
+        /// </summary>
         private void Spawn()
         {
             Vector3 direction = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f), 0);
-            Vector3 screen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
-            direction = direction.normalized * screen.x;
+            Vector3 screen = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+            const float ratio = 16f / 9f;
+            if (Mathf.Abs(direction.x) > Math.Abs(direction.y) * ratio)
+            {
+                direction *= (screen.x / direction.x);
+            }
+            else
+            {
+                direction *= (screen.y / direction.y); 
+            }
             Vector3 offset = direction.normalized * SCREEN_OFFSET;
             direction += offset;
             Vector2 position = direction;
