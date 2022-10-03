@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AgentSpawnSettings
   m_EditorClassIdentifier: 
   _spawnLevels:
-  - _agentCount: 10
+  - _agentCount: 3
     _spawnRadius: 2
     _minSpawnNumber: 1
     _maxSpawnNumber: 1

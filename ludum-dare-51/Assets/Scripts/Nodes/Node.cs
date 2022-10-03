@@ -13,5 +13,9 @@ namespace LD51
 
         public float Radius => _collider.bounds.size.x / 2;
         public Color Color => _sprite.color;
+        public void SetColor(Color color)
+		{
+            _sprite.color = color;
+        }
     }
 }

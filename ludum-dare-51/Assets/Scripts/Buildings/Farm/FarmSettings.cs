@@ -8,5 +8,11 @@ namespace LD51
 		[SerializeField]
 		private int _baseEnergyGerneration = 1;
 		public int BaseEnergyGerneration => _baseEnergyGerneration;
+		[SerializeField]
+		private ConstructionSettings _constructionSettings;
+		public ConstructionSettings ConstructionSettings => _constructionSettings;
+		[SerializeField]
+		private NodeColorSettings _colorSettings;
+		public NodeColorSettings ColorSettings => _colorSettings;
 	}
 }

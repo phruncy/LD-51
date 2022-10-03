@@ -21,6 +21,7 @@ namespace LD51
 		private void Start()
 		{
             _energyConsumer.SetRequiredEnergy(_seedSettings.GrowCosts);
+            _energyConsumer.SetPriority(_seedSettings.Priority);
         }
 	}
 }

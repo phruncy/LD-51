@@ -17,6 +17,8 @@ namespace LD51
         private Gradient _colorChange;
         [SerializeField]
         private EnergyConsumer _consumer;
+        [SerializeField]
+        private bool _changeColor = true;
 
         private void Start()
         {
@@ -34,9 +36,16 @@ namespace LD51
         private void UpdateView()
         {
             float percentage = _consumer.Progress;
-            Color color = _colorChange.Evaluate(percentage);
-            _indicator.color = color;
+            ChangeColor(percentage);
             _target.localScale = _targetSizeObject.localScale * percentage;
         }
-    }
+
+		private void ChangeColor(float percentage)
+		{
+            if (!_changeColor)
+                return;
+            Color color = _colorChange.Evaluate(percentage);
+            _indicator.color = color;
+        }
+	}
 }

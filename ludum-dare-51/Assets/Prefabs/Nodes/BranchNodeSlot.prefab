@@ -393,6 +393,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectable: {fileID: 7456999676395571242}
   _slot: {fileID: 6305442299919521227}
+--- !u!114 &8317427436398348346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658601824179312319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f5c6c1f197b9a4eab9e484f27f461f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slot: {fileID: 6305442299919521227}
+  _lerpTime: 0.2
+  _defaultColor: {r: 0.13333334, g: 0.11764706, b: 0.12156863, a: 1}
 --- !u!114 &7456999676395571242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8928969989532684944, guid: 1c247438ae776d649adf1572017db6bc, type: 3}
