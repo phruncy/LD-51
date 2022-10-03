@@ -13,6 +13,8 @@ namespace LD51
 
         private Dictionary<Node, Branch> _nodeToBranch = new Dictionary<Node, Branch>();
 
+        public event Action OnBranchDestroy;
+
 		private void Start()
 		{
             Add(new Branch(_heart.Node));
@@ -62,6 +64,7 @@ namespace LD51
             if (!_nodeToBranch.ContainsKey(owner))
                 return;
             DestroyBranch(_nodeToBranch[owner]);
+            OnBranchDestroy?.Invoke();
         }
 
         private void DestroyBranch(Branch branch)

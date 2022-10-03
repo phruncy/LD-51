@@ -53,6 +53,10 @@ MonoBehaviour:
     _spawnRadius: 2
     _minSpawnNumber: 3
     _maxSpawnNumber: 4
+  - _agentCount: 7
+    _spawnRadius: 2
+    _minSpawnNumber: 3
+    _maxSpawnNumber: 4
   - _agentCount: 10
     _spawnRadius: 2
     _minSpawnNumber: 3
@@ -73,7 +77,3 @@ MonoBehaviour:
     _spawnRadius: 20
     _minSpawnNumber: 4
     _maxSpawnNumber: 4
-  - _agentCount: 0
-    _spawnRadius: 0
-    _minSpawnNumber: 0
-    _maxSpawnNumber: 0

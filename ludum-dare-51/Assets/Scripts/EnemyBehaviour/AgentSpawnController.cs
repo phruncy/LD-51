@@ -25,6 +25,8 @@ namespace LD51
         [SerializeField]
         private AgentSpawnSettings _settings;
 
+        public event Action OnSpawn;
+
         private RepeatingTimer _timer;
         private Canvas _canvas;
         private int _currentLevel = 0;
@@ -47,6 +49,7 @@ namespace LD51
             {
                 SpawnLevel lvl = _settings.GetLevel(_currentLevel);
                 ExecuteLevel(lvl);
+                OnSpawn?.Invoke();
             }
         }
 
