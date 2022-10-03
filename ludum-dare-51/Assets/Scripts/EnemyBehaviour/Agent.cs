@@ -11,7 +11,7 @@ namespace LD51
         [SerializeField]
         private float maxSteeringForce;
         [SerializeField]
-        private Rigidbody2D body;
+        private Rigidbody2D _body;
         [SerializeField]
         private Node _target;
         public Node target
@@ -63,12 +63,10 @@ namespace LD51
             Vector2 steer = GetSteer(desired);
             acceleration += steer;
             Move();
-            Face(body.velocity);
+            if (_body.velocity.sqrMagnitude > 0)
+                Face(_body.velocity);
         }
 
-        /// <summary>
-        /// Seeks the closest node within the scene
-        /// </summary>
         public void SeekTarget()
         {
             Node[] nodes = FindObjectsOfType<Node>();
@@ -84,17 +82,17 @@ namespace LD51
             }
         }
 
-        private void Face(Vector2 target)
+        private void Face(Vector2 direction)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(target);
+            Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
             targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
-            body.MoveRotation(targetRotation);
+            _body.MoveRotation(targetRotation);
         }
 
         private Vector2 GetSteer(Vector2 targetDir)
         {
             targetDir *= maxSpeed;
-            Vector2 steer = targetDir - body.velocity;
+            Vector2 steer = targetDir - _body.velocity;
             if (steer.sqrMagnitude > maxSteeringForce * maxSteeringForce)
             {
                 steer = steer.normalized * maxSteeringForce;
@@ -104,12 +102,12 @@ namespace LD51
 
         private void Move()
         {
-            body.AddForce(acceleration);
+            _body.AddForce(acceleration, ForceMode2D.Force);
             acceleration *= 0;
-            if (body.velocity.sqrMagnitude > SqrMaxSpeed)
+            if (_body.velocity.sqrMagnitude > SqrMaxSpeed)
             {
-                Vector2 velocity = body.velocity.normalized;
-                body.velocity = velocity * maxSpeed;
+                Vector2 velocity = _body.velocity.normalized;
+                _body.velocity = velocity * maxSpeed;
             }
         }
     }
