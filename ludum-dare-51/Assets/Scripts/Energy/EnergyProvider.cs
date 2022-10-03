@@ -35,7 +35,6 @@ namespace LD51
 		private void ProvideEnergy()
 		{
 			List<EnergyController.EnergyTarget> targets = _controller.GetEnergyTargets();
-			Debug.Log($"Energy sent {targets.Sum(t => t.EnergyAmount)}");
 			foreach (EnergyController.EnergyTarget target in targets)
 			{
 				CreateEnergy(target);

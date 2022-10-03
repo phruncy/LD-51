@@ -9,6 +9,7 @@ namespace LD51
     {
 		public int Count => _values.Count();
 		private List<Node> _values = new List<Node>();
+		public IReadOnlyCollection<Node> Values => _values.AsReadOnly();
 
 		public void Add(Node node)
 		{
