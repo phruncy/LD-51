@@ -19,25 +19,45 @@ namespace LD51
         private EnergyConsumer _consumer;
         [SerializeField]
         private bool _changeColor = true;
+        [SerializeField]
+        private float _lerpTime = 0.2f;
+
+        private float _currentTime;
+        private float _currentPercentage;
+        private float _startPercentage;
+        private float _targetPercentage;
 
         private void Start()
         {
-            _consumer.OnPogress += UpdateView;
-            _consumer.OnRequiredEnergyChanged += UpdateView;
             UpdateView();
         }
 
-		private void OnDestroy()
-        {
-            _consumer.OnPogress -= UpdateView;
-            _consumer.OnRequiredEnergyChanged -= UpdateView;
+		private void Update()
+		{
+            UpdateView();
         }
 
-        private void UpdateView()
+		private void UpdateView()
         {
-            float percentage = _consumer.Progress;
-            ChangeColor(percentage);
-            _target.localScale = _targetSizeObject.localScale * percentage;
+            float targetPercentage = _consumer.Progress;
+
+            if (_targetPercentage != targetPercentage)
+            {
+                _currentTime = 0;
+                _startPercentage = _currentPercentage;
+                _targetPercentage = targetPercentage;
+            }
+
+            if (_currentTime < _lerpTime)
+            {
+                _currentTime += Time.deltaTime;
+                float progress = _currentTime / _lerpTime;
+                _currentPercentage = Mathf.Lerp(_startPercentage, _targetPercentage, progress);
+                ChangeColor(_currentPercentage);
+                _target.localScale = _targetSizeObject.localScale * _currentPercentage;
+            }
+
+           
         }
 
 		private void ChangeColor(float percentage)
@@ -47,5 +67,5 @@ namespace LD51
             Color color = _colorChange.Evaluate(percentage);
             _indicator.color = color;
         }
-	}
+    }
 }
