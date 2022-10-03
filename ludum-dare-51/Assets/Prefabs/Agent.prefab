@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 7612477275107655026}
+  _destructable: {fileID: 0}
 --- !u!1 &7838770983948620131
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +140,7 @@ GameObject:
   - component: {fileID: 7838770983948620142}
   - component: {fileID: 7612477275107655026}
   - component: {fileID: 3714612293945529552}
+  - component: {fileID: 2582551482872589363}
   m_Layer: 8
   m_Name: Agent
   m_TagString: Enemy
@@ -199,3 +201,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2582551482872589363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838770983948620131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3060fe1e7ea164bc299eedd66d66bf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 7612477275107655026}

@@ -123,11 +123,33 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &55734478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 694842683531252727, guid: 5700a73500e14b644833516a95ea1ebf, type: 3}
+  m_PrefabInstance: {fileID: 2582768387319223278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b824e328c404444b84ad778c9a5aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &215949890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7502981829620007193, guid: 5aed8a7d0c4967b44bc5f891f6a047b5, type: 3}
   m_PrefabInstance: {fileID: 7632098797176059565}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &264926392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2582768387559537409, guid: 5700a73500e14b644833516a95ea1ebf, type: 3}
+  m_PrefabInstance: {fileID: 2582768387319223278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70701559eff09fe4b97d9434d2b379de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &558773415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 722415923964018713, guid: 5aed8a7d0c4967b44bc5f891f6a047b5, type: 3}
@@ -234,6 +256,34 @@ PrefabInstance:
       propertyPath: _nodes
       value: 
       objectReference: {fileID: 2582768387319223279}
+    - target: {fileID: 1299260007237292634, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
+      propertyPath: _agents
+      value: 
+      objectReference: {fileID: 55734478}
+    - target: {fileID: 1299260007237292634, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
+      propertyPath: _energy
+      value: 
+      objectReference: {fileID: 264926392}
+    - target: {fileID: 1299260007237292634, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
+      propertyPath: _bassMinEnergyLvl
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299260007237292634, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
+      propertyPath: _drumsMaxEnemyCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299260007237292635, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
+      propertyPath: Params.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299260007237292635, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
+      propertyPath: Params.Array.data[4].Name
+      value: depth-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299260007237292635, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
+      propertyPath: Params.Array.data[4].Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1299260007538699581, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
       propertyPath: _heartGrow
       value: 
