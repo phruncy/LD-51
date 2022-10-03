@@ -270,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1299260007237292634, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
       propertyPath: _drumsMaxEnemyCount
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1299260007237292635, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
       propertyPath: Params.Array.size
