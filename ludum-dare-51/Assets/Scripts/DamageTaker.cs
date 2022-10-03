@@ -7,7 +7,7 @@ namespace LD51
         [SerializeField]
         private Node _node;
 
-        public void TakeDamage(float _damage)
+        public void ApplyDamage(float _damage)
         {
             _node.Shrink(_damage);
         }

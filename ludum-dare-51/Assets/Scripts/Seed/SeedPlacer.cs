@@ -12,7 +12,7 @@ namespace LD51
         [SerializeField]
         private Seed _seedPrefab;
         [SerializeField]
-        private SeedHook _seedHookPrefab;
+        private NodeHook _seedHookPrefab;
         [SerializeField]
         private NodeConnection _connectionPrefab;
         [SerializeField]
@@ -36,10 +36,10 @@ namespace LD51
 		private void OnDestroy()
 		{
             _seedsController.OnSeedSlotsAdded -= Init;
-			foreach (SeedSlot slot in _seedsController.SingleSlots)
+            _seedsController.OnSeedSlotsRemoved -= Clean;
+            foreach (SeedSlots slots in _seedsController.Slots)
 			{
-                slot.OnSlotActivated -= PlaceSeed;
-
+                Clean(slots);
             }
         }
 
@@ -50,6 +50,7 @@ namespace LD51
                 Init(slots);
             }
             _seedsController.OnSeedSlotsAdded += Init;
+            _seedsController.OnSeedSlotsRemoved += Clean;
         }
 
 		private void Init(SeedSlots slots)
@@ -68,13 +69,22 @@ namespace LD51
                 slot.OnSlotActivated += PlaceSeed;
         }
 
+        private void Clean(SeedSlots slots)
+        {
+			foreach (SeedSlot slot in slots.Values)
+			{
+                slot.OnSlotActivated -= PlaceSeed;
+            }
+        }
+
 		private void PlaceSeed(SeedSlot slot)
 		{
             if (slot == null)
                 return;
-            SeedHook hook = Instantiate(_seedHookPrefab, _nodesHook, true);
+            NodeHook hook = Instantiate(_seedHookPrefab, _nodesHook, true);
             hook.Attatch.Init(slot.transform);
             Seed seed = Instantiate(_seedPrefab, hook.transform, false);
+            seed.Init(hook);
             SetPosition(seed, slot);
             SetMoveToTarget(seed, slot);
             CreateConnection(seed, slot);

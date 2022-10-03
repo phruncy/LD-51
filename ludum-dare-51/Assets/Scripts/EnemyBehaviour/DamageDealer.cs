@@ -13,10 +13,10 @@ namespace LD51
         {
             if (collision.gameObject.tag =="Node")
             {
-                DamageTaker damageTaker = collision.gameObject.GetComponentInParent<DamageTaker>();
+                 DamageTaker damageTaker = collision.gameObject.GetComponent<DamageTaker>();
                 if (damageTaker)
                 {
-                    damageTaker.TakeDamage(_damage);
+                    damageTaker.ApplyDamage(_damage);
                 }
             }
         }

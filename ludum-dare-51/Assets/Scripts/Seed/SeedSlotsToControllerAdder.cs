@@ -8,10 +8,17 @@ namespace LD51
     {
         [SerializeField]
         private SeedSlots _slots;
+		private SeedsController _controller;
 
 		private void Start()
 		{
-			FindObjectOfType<SeedsController>().Add(_slots);
+			_controller = FindObjectOfType<SeedsController>();
+			_controller.Add(_slots);
+		}
+
+		private void OnDestroy()
+		{
+			_controller?.Remove(_slots);
 		}
 	}
 }

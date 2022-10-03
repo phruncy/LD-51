@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LD51
 {
-    public class SeedHook : MonoBehaviour
+    public class NodeHook : MonoBehaviour
     {
         [SerializeField]
         private Attatch _attatch;

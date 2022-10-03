@@ -11,7 +11,9 @@ namespace LD51
         public IReadOnlyCollection<SeedSlot> SingleSlots => _slots.SelectMany(s => s.Values).ToList();
         public IReadOnlyCollection<SeedSlots> Slots => _slots.AsReadOnly();
         private System.Random _random;
-        public event Action<SeedSlots> OnSeedSlotsAdded;
+
+		public event Action<SeedSlots> OnSeedSlotsAdded;
+		public event Action<SeedSlots> OnSeedSlotsRemoved;
 
         private void Awake()
         {
@@ -22,6 +24,12 @@ namespace LD51
         {
             _slots.Add(slots);
             OnSeedSlotsAdded?.Invoke(slots);
+        }
+
+        internal void Remove(SeedSlots slots)
+        {
+            _slots.Remove(slots);
+            OnSeedSlotsRemoved?.Invoke(slots);
         }
 
         public SeedSlot GetRandomActiveSeedSlot()

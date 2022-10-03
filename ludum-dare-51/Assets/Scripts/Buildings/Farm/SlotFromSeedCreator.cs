@@ -31,15 +31,15 @@ namespace LD51
 
 		private void OnComplete()
 		{
-			StartCoroutine(CreateFarm());
+			StartCoroutine(CreateSlot());
 		}
 
-		private IEnumerator CreateFarm()
+		private IEnumerator CreateSlot()
 		{
 			yield return new WaitForSeconds(_delay);
-			NodeSlot farm = Instantiate(_slotPrefab, _seed.transform.parent, false);
-			farm.transform.position = _seed.transform.position;
-			_tree.ReplaceNode(_seed.Node, farm.Node);
+			NodeSlot slot = Instantiate(_slotPrefab, _seed.Hook.transform, false);
+			slot.transform.position = _seed.transform.position;
+			_tree.ReplaceNode(_seed.Node, slot.Node);
 			Destroy(_seed.gameObject);
 		}
 	}

@@ -17,9 +17,15 @@ namespace LD51
         private Node _node;
         [SerializeField]
         private SeedToTargetMover _moveToTarget;
+        public NodeHook Hook { get; private set; }
         public SeedToTargetMover MoveToTarget => _moveToTarget;
         public EnergyConsumer EnergyConsumer => _energyConsumer;
         public Node Node => _node;
+
+        public void Init(NodeHook hook)
+		{
+            Hook = hook;
+        }
 
 		private void Start()
 		{

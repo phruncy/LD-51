@@ -18,18 +18,30 @@ namespace LD51
 
         public float Radius => _collider.bounds.size.x / 2;
         public Color Color => _sprite.color;
+        public NodeHook Hook { get; set; }
+
         public void SetColor(Color color)
 		{
             _sprite.color = color;
         }
 
-        public void Shrink(float _damage)
+        public void Destruct()
+		{
+            Destroy(Hook);
+		}
+
+        public void SetHook(NodeHook hook)
+		{
+            Hook = hook;
+        }
+
+        public void Shrink(float damage)
         {
-            if (_damage > _lifeIndicatorTransform.localScale.x)
+            if (damage > _lifeIndicatorTransform.localScale.x)
                 OnLifeZero?.Invoke();
             else
             {
-                Vector3 decrease = Vector3.one * _damage;
+                Vector3 decrease = Vector3.one * damage;
                 _lifeIndicatorTransform.localScale -= decrease;
             }
         }

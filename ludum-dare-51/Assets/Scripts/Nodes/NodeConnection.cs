@@ -31,6 +31,11 @@ namespace LD51
 			UpdateColors();
 		}
 
+		public void Destruct()
+		{
+			Destroy(gameObject);
+		}
+
 		public void Init(Node startNode, Node endNode)
 		{
 			StartNode = startNode;

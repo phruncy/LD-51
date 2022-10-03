@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace LD51
 {
@@ -52,15 +50,10 @@ namespace LD51
             Parent = parent;
         }
 
-        internal void Destruct()
+        public void Destruct()
         {
-            _children.ForEach((Branch branch) =>
-            {
-                Destruct();
-            });
-            _children.Clear();
-            GameObject.Destroy(Node.gameObject);
-            GameObject.Destroy(NodeConnection.gameObject);
+            Node.Destruct();
+            NodeConnection?.Destruct();
         }
     }
 }
