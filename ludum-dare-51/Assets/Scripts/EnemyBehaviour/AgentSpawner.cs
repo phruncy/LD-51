@@ -13,10 +13,12 @@ namespace LD51
         private uint _lifeCyclePhase = 0;
         private AgentCollection _targetCollection;
         private SpawnLevel _spawnLevel;
-        private RepeatingTimer _timer;       
-        private AgentSpawnerState _state = AgentSpawnerState.Pending;
+        private RepeatingTimer _timer;
 
-        public void Init(Vector2 position, SpawnLevel spawnLevel, AgentCollection target)
+		public AgentSpawnerState State { get; private set; } = AgentSpawnerState.Pending;
+        public event Action OnStateChanged;
+
+		public void Init(Vector2 position, SpawnLevel spawnLevel, AgentCollection target)
         {
             transform.position = position;
             _spawnLevel = spawnLevel;
@@ -32,15 +34,15 @@ namespace LD51
 
         private void UpdateLifeCycle()
         {
-            if(_state == AgentSpawnerState.Pending)
+            if(State == AgentSpawnerState.Pending)
             {
                 if (_lifeCyclePhase >= _pendingCycles)
                 {
                     Spawn();
-                    _state = AgentSpawnerState.Spawned;
+                    SetState(AgentSpawnerState.Spawned);
                 }
                 _lifeCyclePhase++;
-            } else if (_state == AgentSpawnerState.Spawned)
+            } else if (State == AgentSpawnerState.Spawned)
             {
                 Destroy(transform.gameObject);
             }
@@ -60,6 +62,12 @@ namespace LD51
                 Vector3 position = transform.position + offset;
                 _targetCollection.Add(position);
             }
+        }
+
+        private void SetState(AgentSpawnerState value)
+		{
+            State = value;
+            OnStateChanged?.Invoke();
         }
 
     }
