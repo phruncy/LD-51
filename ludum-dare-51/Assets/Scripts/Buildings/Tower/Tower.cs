@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,11 @@ namespace LD51
         [SerializeField]
         private SpriteRenderer _indicatorSprite;
 
+        private TowerLevelSettings LevelSettings => _towerSettings.Levels[Level];
+
+        public event Action OnRangeChanged;
+        public float Range => LevelSettings.Distance;
+
         private void Start()
 		{
             _indicatorSprite.color = _towerSettings.ColorSettings.SideColor;
@@ -26,6 +32,7 @@ namespace LD51
             _consumer.SetNode(node);
             _consumer.SetPriority(_towerSettings.ConsumptionPrio);
             _consumer.Provide(_consumer.RequiredEnergy);
+            OnRangeChanged?.Invoke();
         }
     }
 }
