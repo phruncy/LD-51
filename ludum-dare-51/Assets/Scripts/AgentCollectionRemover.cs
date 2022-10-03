@@ -11,7 +11,7 @@ namespace LD51
 
         private void OnDestroy()
         {
-            FindObjectOfType<AgentCollection>().Remove(_agent);
+            FindObjectOfType<AgentCollection>()?.Remove(_agent);
         }
     }
 }

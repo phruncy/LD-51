@@ -11,6 +11,9 @@ namespace LD51
         private AgentSpawner _spawnerPrefab;
 
         [SerializeField]
+        private AgentSpawnerIndicator _indicatorPrefab;
+
+        [SerializeField]
         private int _progressionStep = 3;
 
         [SerializeField]
@@ -23,6 +26,7 @@ namespace LD51
         private AgentSpawnSettings _settings;
 
         private RepeatingTimer _timer;
+        private Canvas _canvas;
         private int _currentLevel = 0;
         private int _timerCount = 0;
         private const float SCREEN_OFFSET = 10.0f;
@@ -30,6 +34,7 @@ namespace LD51
         private void Start()
         {
             _timer = FindObjectOfType<RepeatingTimer>();
+            _canvas = FindObjectOfType<Canvas>();
             _timer.OnFinished += Step;
         }
 
@@ -64,6 +69,8 @@ namespace LD51
             Vector2 position = GetRandomPosition();
             AgentSpawner spawner = GameObject.Instantiate(_spawnerPrefab);
             spawner.Init(position, lvl, _collection);
+            AgentSpawnerIndicator indicator = Instantiate(_indicatorPrefab, _canvas.transform);
+            indicator.Init(spawner);
         }
 
         private Vector2 GetRandomPosition()
