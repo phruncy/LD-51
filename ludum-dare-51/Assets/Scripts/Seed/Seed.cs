@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ namespace LD51
 {
     public class Seed : MonoBehaviour
     {
+        public event Action OnDestruction; 
+
         [SerializeField]
         private SeedSettings _seedSettings;
         [SerializeField]
@@ -23,5 +26,10 @@ namespace LD51
             _energyConsumer.SetRequiredEnergy(_seedSettings.GrowCosts);
             _energyConsumer.SetPriority(_seedSettings.Priority);
         }
-	}
+
+        private void OnDestroy()
+        {
+            OnDestruction?.Invoke();
+        }
+    }
 }

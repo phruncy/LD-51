@@ -11,8 +11,8 @@ namespace LD51
         public Node Node { get; private set; }
         public NodeConnection NodeConnection { get; }
 
-        private List<Branch> _branches = new List<Branch>();
-        public IReadOnlyCollection<Branch> Branches => _branches;
+        private List<Branch> _children = new List<Branch>();
+        public IReadOnlyCollection<Branch> Children => _children;
 
         public Branch(
             Branch parent,
@@ -32,14 +32,14 @@ namespace LD51
             Node = node;
         }
 
-        public void AddBranch(Branch branch)
+        public void AddChild(Branch branch)
 		{
-            _branches.Add(branch);
+            _children.Add(branch);
         }
 
-        public void RemoveBranch(Branch branch)
+        public void RemoveChild(Branch branch)
 		{
-            _branches.Remove(branch);
+            _children.Remove(branch);
         }
 
         public void SetNode(Node newNode)
@@ -51,5 +51,16 @@ namespace LD51
 		{
             Parent = parent;
         }
-	}
+
+        internal void Destruct()
+        {
+            _children.ForEach((Branch branch) =>
+            {
+                Destruct();
+            });
+            _children.Clear();
+            GameObject.Destroy(Node.gameObject);
+            GameObject.Destroy(NodeConnection.gameObject);
+        }
+    }
 }

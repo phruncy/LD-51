@@ -53,5 +53,11 @@ namespace LD51
             branch.SetNode(newNode);
             _nodeToBranch.Add(newNode, branch);
         }
+
+        public void DestroyBranch(Node owner)
+        {
+            _nodeToBranch[owner].Destruct();
+            _nodeToBranch.Remove(owner);
+        }
     }
 }

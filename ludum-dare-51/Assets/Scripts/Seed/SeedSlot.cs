@@ -25,5 +25,20 @@ namespace LD51
             Active = true;
             OnSlotActivated?.Invoke(this);
         }
-	}
+
+        private void Start()
+        {
+            _seed.OnDestruction += Free;
+        }
+
+        private void Free()
+        {
+            Occupied = false;
+        }
+
+        private void OnDestroy()
+        {
+            _seed.OnDestruction -= Free;
+        }
+    }
 }

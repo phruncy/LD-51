@@ -9,6 +9,7 @@ namespace LD51
     {
 		public int Count => _values.Count();
 		private List<Node> _values = new List<Node>();
+		private Dictionary<Node, SeedHook> seedHookMap;
 
 		public void Add(Node node)
 		{
@@ -17,7 +18,7 @@ namespace LD51
 
 		public void Remove(Node node)
 		{
-			_values.Add(node);
+			_values.Remove(node);
 		}
     }
 }
