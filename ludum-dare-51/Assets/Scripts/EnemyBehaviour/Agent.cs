@@ -22,11 +22,20 @@ namespace LD51
         private float SqrMaxSpeed => maxSpeed * maxSpeed;
         private AgentState _state = AgentState.TargetSeeking;
 
+        private bool active = true;
+        private NodesController _nodesCollection;
+
         public float delta => maxSpeed * 0.01f;
 
-        private void FixedUpdate()
+		private void Start()
+		{
+            _nodesCollection = FindObjectOfType<NodesController>();
+        }
+
+		private void FixedUpdate()
         {
-            HandleState();
+            if(active)
+                HandleState();
         }
 
         private void HandleState()
@@ -68,9 +77,8 @@ namespace LD51
 
         public void SeekTarget()
         {
-            Node[] nodes = FindObjectsOfType<Node>();
             float closest = float.PositiveInfinity;
-            foreach(Node node in nodes)
+            foreach(Node node in _nodesCollection.Values)
             {
                 float distanceSqr = (transform.position - node.transform.position).sqrMagnitude;
                 if (distanceSqr < closest)
@@ -79,6 +87,8 @@ namespace LD51
                     closest = distanceSqr;
                 }  
             }
+            if (_target == null)
+                active = false;
         }
 
         private void Face(Vector2 direction)

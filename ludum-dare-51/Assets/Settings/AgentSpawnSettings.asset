@@ -39,41 +39,45 @@ MonoBehaviour:
     _maxSpawnNumber: 2
   - _agentCount: 3
     _spawnRadius: 2
-    _minSpawnNumber: 1
+    _minSpawnNumber: 2
     _maxSpawnNumber: 3
-  - _agentCount: 5
+  - _agentCount: 6
+    _spawnRadius: 2
+    _minSpawnNumber: 2
+    _maxSpawnNumber: 3
+  - _agentCount: 8
     _spawnRadius: 2
     _minSpawnNumber: 2
     _maxSpawnNumber: 3
   - _agentCount: 7
     _spawnRadius: 2
-    _minSpawnNumber: 2
-    _maxSpawnNumber: 3
-  - _agentCount: 7
-    _spawnRadius: 2
-    _minSpawnNumber: 3
-    _maxSpawnNumber: 4
-  - _agentCount: 7
-    _spawnRadius: 2
-    _minSpawnNumber: 3
-    _maxSpawnNumber: 4
-  - _agentCount: 10
-    _spawnRadius: 2
-    _minSpawnNumber: 3
-    _maxSpawnNumber: 4
+    _minSpawnNumber: 4
+    _maxSpawnNumber: 5
   - _agentCount: 12
-    _spawnRadius: 10
+    _spawnRadius: 2
+    _minSpawnNumber: 2
+    _maxSpawnNumber: 3
+  - _agentCount: 12
+    _spawnRadius: 3
     _minSpawnNumber: 3
     _maxSpawnNumber: 5
+  - _agentCount: 15
+    _spawnRadius: 3
+    _minSpawnNumber: 4
+    _maxSpawnNumber: 7
+  - _agentCount: 20
+    _spawnRadius: 4
+    _minSpawnNumber: 4
+    _maxSpawnNumber: 7
+  - _agentCount: 25
+    _spawnRadius: 4
+    _minSpawnNumber: 5
+    _maxSpawnNumber: 8
   - _agentCount: 0
     _spawnRadius: 0
     _minSpawnNumber: 0
     _maxSpawnNumber: 0
-  - _agentCount: 20
-    _spawnRadius: 15
-    _minSpawnNumber: 3
-    _maxSpawnNumber: 5
-  - _agentCount: 25
-    _spawnRadius: 20
-    _minSpawnNumber: 4
-    _maxSpawnNumber: 4
+  - _agentCount: 30
+    _spawnRadius: 5
+    _minSpawnNumber: 7
+    _maxSpawnNumber: 10
