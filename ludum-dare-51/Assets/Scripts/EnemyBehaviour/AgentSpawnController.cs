@@ -73,11 +73,11 @@ namespace LD51
             const float ratio = 16f / 9f;
             if (Mathf.Abs(direction.x) > Math.Abs(direction.y) * ratio)
             {
-                direction *= (screen.x / direction.x);
+                direction *= (screen.x / Math.Abs(direction.x));
             }
             else
             {
-                direction *= (screen.y / direction.y); 
+                direction *= (screen.y / Math.Abs(direction.y)); 
             }
             direction += direction.normalized * SCREEN_OFFSET;
             return new Vector2(direction.x, direction.y);
