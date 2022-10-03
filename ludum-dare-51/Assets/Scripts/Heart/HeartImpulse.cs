@@ -14,6 +14,8 @@ namespace LD51
         private SpriteRenderer _indicator;
         [SerializeField]
         private Gradient _colorChange;
+        [SerializeField]
+        private bool _changeColor = true;
 
         private RepeatingTimer _timer;
 
@@ -25,9 +27,16 @@ namespace LD51
 		private void Update()
 		{
             float percentage = _timer.Percentage;
-            Color color = _colorChange.Evaluate(percentage);
-            _indicator.color = color;
+            ChangeColor(percentage);
             _target.localScale = _targetSizeObject.localScale * percentage;
         }
-	}
+
+        private void ChangeColor(float percentage)
+        {
+            if (!_changeColor)
+                return;
+            Color color = _colorChange.Evaluate(percentage);
+            _indicator.color = color;
+        }
+    }
 }

@@ -5,32 +5,27 @@ using UnityEngine;
 
 namespace LD51
 {
-    public class Farm : MonoBehaviour, INodeSlotObject
+    public class Farm : Building
     {
-        [SerializeField]
-        private Node _node;
         [SerializeField]
         private EnergyProducer _producer;
         [SerializeField]
-        private SpriteRenderer _sprite;
-        [SerializeField]
         private FarmSettings _settings;
-
-        public Node Node => _node;
+        [SerializeField]
+        private SpriteRenderer _indicatorSprite;
         public EnergyProducer Producer => _producer;
-        public Transform Base => transform;
-		public Color Color => _sprite.color;
-
-		public event Action OnDestruct;
 
 		private void Start()
 		{
-            _producer.EnergyProduction = _settings.BaseEnergyGerneration;
+            _indicatorSprite.color = _settings.ColorSettings.SideColor;
+            _sprite.color = _settings.ColorSettings.MainColor;
         }
 
-		private void OnDestroy()
+		public override void Init(Node node, int level)
 		{
-            OnDestruct?.Invoke();
+			base.Init(node, level);
+            _producer.SetNode(node);
+            _producer.EnergyProduction = _settings.BaseEnergyGerneration;
         }
 	}
 }

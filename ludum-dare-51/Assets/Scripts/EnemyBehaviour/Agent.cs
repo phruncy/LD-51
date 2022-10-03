@@ -21,7 +21,6 @@ namespace LD51
         private Vector2 acceleration;
         private float SqrMaxSpeed => maxSpeed * maxSpeed;
         private AgentState _state = AgentState.TargetSeeking;
-        private uint _innerTimer = 0;
 
         public float delta => maxSpeed * 0.01f;
 
