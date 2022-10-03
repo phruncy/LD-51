@@ -13,11 +13,11 @@ namespace LD51
         private Seed _seed;
 		[SerializeField]
 		private float _delay = 1;
-		private Tree _tree;
+		private NodeTree _tree;
 
 		private void Start()
 		{
-			_tree = FindObjectOfType<Tree>();
+			_tree = FindObjectOfType<NodeTree>();
 			if (_seed.EnergyConsumer.Progress == 1)
 				OnComplete();
 			else
@@ -31,15 +31,17 @@ namespace LD51
 
 		private void OnComplete()
 		{
-			StartCoroutine(CreateFarm());
+			StartCoroutine(CreateSlot());
 		}
 
-		private IEnumerator CreateFarm()
+		private IEnumerator CreateSlot()
 		{
 			yield return new WaitForSeconds(_delay);
-			NodeSlot farm = Instantiate(_slotPrefab, _seed.transform.parent, false);
-			farm.transform.position = _seed.transform.position;
-			_tree.ReplaceNode(_seed.Node, farm.Node);
+			NodeHook hook = _seed.Hook;
+			NodeSlot slot = Instantiate(_slotPrefab, hook.transform, false);
+			slot.transform.position = _seed.transform.position;
+			_tree.ReplaceNode(_seed.Node, slot.Node);
+			slot.Node.SetHook(hook);
 			Destroy(_seed.gameObject);
 		}
 	}

@@ -16,7 +16,9 @@ namespace LD51
 
 		public void AddSeed(Seed seed)
 		{
+            RemoveSeedListeners();
             _seed = seed;
+            _seed.OnDestruction += Free;
             Occupied = true;
         }
 
@@ -25,5 +27,22 @@ namespace LD51
             Active = true;
             OnSlotActivated?.Invoke(this);
         }
-	}
+
+        private void RemoveSeedListeners()
+		{
+            if (_seed == null)
+                return;
+            _seed.OnDestruction -= Free;
+        }
+
+        private void Free()
+        {
+            Occupied = false;
+        }
+
+        private void OnDestroy()
+        {
+            RemoveSeedListeners();
+        }
+    }
 }

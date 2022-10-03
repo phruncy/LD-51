@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace LD51
 {
-    public class Tree : MonoBehaviour
+    public class NodeTree : MonoBehaviour
     {
         [SerializeField]
         private Heart _heart;
@@ -24,11 +25,13 @@ namespace LD51
 
         public void Add(NodeConnection connection)
         {
-            _nodeToBranch.Add(connection.EndNode, new Branch
+            Branch branch = new Branch
                 (
                     _nodeToBranch[connection.StartNode],
                     connection
-                ));
+                );
+            _nodeToBranch.Add(connection.EndNode, branch);
+            _nodeToBranch[connection.StartNode].AddChild(branch);
         }
 
         public List<Branch> GetBranchesFromHeartTo(Node node)
@@ -52,6 +55,25 @@ namespace LD51
             branch.NodeConnection.Init(branch.NodeConnection.StartNode, newNode);
             branch.SetNode(newNode);
             _nodeToBranch.Add(newNode, branch);
+        }
+
+        public void DestroyBranch(Node owner)
+        {
+            if (!_nodeToBranch.ContainsKey(owner))
+                return;
+            DestroyBranch(_nodeToBranch[owner]);
+        }
+
+        private void DestroyBranch(Branch branch)
+		{
+            foreach (Branch child in branch.Children.ToList())
+                DestroyBranch(child);
+            branch.Destruct();
+            _nodeToBranch.Remove(branch.Node);
+            if(branch.NodeConnection != null)
+			{
+                _nodeToBranch[branch.NodeConnection.StartNode].RemoveChild(branch);
+            }
         }
     }
 }

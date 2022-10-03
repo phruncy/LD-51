@@ -17,7 +17,7 @@ namespace LD51
 
 		public void Remove(Node node)
 		{
-			_values.Add(node);
+			_values.Remove(node);
 		}
     }
 }

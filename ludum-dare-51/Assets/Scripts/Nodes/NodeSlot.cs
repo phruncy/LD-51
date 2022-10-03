@@ -29,5 +29,5 @@ namespace LD51
             Content.OnDestruct -= RemoveContent;
             Content = null;
         }
-    }
+	}
 }
