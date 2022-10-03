@@ -9,6 +9,8 @@ namespace LD51
     {
 		[SerializeField]
 		private EscapeHandler _escapeHandler;
+
+		public event Action OnSelect;
 		public Selectable Selected { get; private set; }
 
 		private void Start()
@@ -26,6 +28,7 @@ namespace LD51
 				if (_escapeHandler.Contains(Deselect))
 					_escapeHandler.Remove(Deselect);
 				_escapeHandler.Add(Deselect);
+				OnSelect?.Invoke();
 			}
 			
 		}
