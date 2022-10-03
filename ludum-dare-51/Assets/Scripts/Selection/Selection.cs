@@ -7,21 +7,36 @@ namespace LD51
 {
     public class Selection : MonoBehaviour
     {
+		[SerializeField]
+		private EscapeHandler _escapeHandler;
 		public Selectable Selected { get; private set; }
 
-		internal void Select(Selectable selectable)
+		private void Start()
+		{
+			_escapeHandler = FindObjectOfType<EscapeHandler>();
+		}
+
+		public void Select(Selectable selectable)
 		{
 			Deselect();
 			Selected = selectable;
 			if (Selected != null)
+			{
 				Selected.Select();
+				if (_escapeHandler.Contains(Deselect))
+					_escapeHandler.Remove(Deselect);
+				_escapeHandler.Add(Deselect);
+			}
+			
 		}
 
-		internal void Deselect()
+		public void Deselect()
 		{
 			if (Selected != null)
 				Selected.Deselect();
 			Selected = null;
+			if (_escapeHandler.Contains(Deselect))
+				_escapeHandler.Remove(Deselect);
 		}
 	}
 }
