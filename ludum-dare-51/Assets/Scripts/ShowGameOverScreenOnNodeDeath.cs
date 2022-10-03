@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace LD51
 {
-    public class ShowGameOverScreenOnDestroy : MonoBehaviour
+    public class ShowGameOverScreenOnNodeDeath : MonoBehaviour
     {
 		private GameOverScreen _gameOverScreen;
 
 		private void Start()
 		{
-			_gameOverScreen = FindObjectOfType<GameOverScreen>();
+			_gameOverScreen = FindObjectOfType<GameOverScreen>(true);
 		}
 
 		private void OnDestroy()

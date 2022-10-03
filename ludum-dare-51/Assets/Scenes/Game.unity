@@ -379,18 +379,6 @@ PrefabInstance:
       propertyPath: EventReference.Guid.Data4
       value: -148215736
       objectReference: {fileID: 0}
-    - target: {fileID: 5747213218242075711, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747213218242075711, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747213218242075711, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6577423250237739040, guid: e46be4f8daa0c43d0ab13390c7ab1549, type: 3}
       propertyPath: _selection
       value: 
