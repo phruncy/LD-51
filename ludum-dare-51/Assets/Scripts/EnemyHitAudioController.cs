@@ -11,7 +11,7 @@ namespace LD51
         private FMODUnity.StudioEventEmitter _emitter;
 
         [SerializeField]
-        private SingleHitDestructor _destructor;
+        private SingleHitDestructable _destructor;
 
         private void Start()
         {

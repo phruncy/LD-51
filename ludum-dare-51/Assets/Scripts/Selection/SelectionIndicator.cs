@@ -7,6 +7,8 @@ namespace LD51
 {
     public class SelectionIndicator : MonoBehaviour
     {
+		[SerializeField]
+		private float _maxAlpha = 1;
         [SerializeField]
         private SpriteRenderer _sprite;
         [SerializeField]
@@ -58,15 +60,7 @@ namespace LD51
 			if (_currentTime < targetTime)
 			{
 				_currentTime += Time.deltaTime;
-
-				if (_currentTime >= targetTime)
-				{
-					UpdateAlpha(targetValue);
-				}
-				else
-				{
-					UpdateAlpha(Mathf.Lerp(formerValue, targetValue, _currentTime / targetTime));
-				}
+				UpdateAlpha(Mathf.Lerp(formerValue, targetValue, _currentTime / targetTime) * _maxAlpha);
 			}
 		}
 

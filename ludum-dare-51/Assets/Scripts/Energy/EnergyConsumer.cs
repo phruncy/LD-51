@@ -35,6 +35,11 @@ namespace LD51
                 OnComplete?.Invoke();
         }
 
+        public void Reduce(int energy)
+		{
+            Provide(-energy);
+        }
+
         public void SetRequiredEnergy(int value)
 		{
             RequiredEnergy = value;

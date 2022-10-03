@@ -16,6 +16,7 @@ namespace LD51
         private float _currentTime = 0;
         private Vector3 _startScale;
         private float _intensity = 1;
+        private Coroutine _routine;
 
 		private void Start()
 		{
@@ -24,7 +25,9 @@ namespace LD51
 
         public void StartPulse(float delay = 0)
 		{
-            StartCoroutine(DoPulsate(delay));
+            if (_routine != null)
+                StopCoroutine(_routine);
+            _routine = StartCoroutine(DoPulsate(delay));
 		}
 
         public void SetIntensity(float value)
@@ -44,6 +47,7 @@ namespace LD51
                 _target.localScale = _startScale * factor;
                 yield return 0;
             }
+            _routine = null;
         }
 	}
 }

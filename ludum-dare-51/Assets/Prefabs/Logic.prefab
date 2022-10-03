@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4439351462451715508}
   - component: {fileID: 6919310262651342570}
   - component: {fileID: 4458974224492828975}
+  - component: {fileID: 7662511508540542381}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -60,6 +61,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _farmPrefab: {fileID: 4294829093119138641, guid: 0d5cc2922cbf1fa42baca1f3ff283b2b, type: 3}
   _towerPrefab: {fileID: 4870288688648184800, guid: 4af98c3eb7aef0f4e99add507a0d01fe, type: 3}
+--- !u!114 &7662511508540542381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277598951966742577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76f6ecc0cefec4a4ea67a7257880c140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 9068746307341123077, guid: 4c6bff8d8f777d14d9eebb2f13058bfe, type: 3}
+  _bulletSpeed: 300
 --- !u!1 &1892952281011075182
 GameObject:
   m_ObjectHideFlags: 0
